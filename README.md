@@ -1,18 +1,30 @@
 ## 네이버 클라우드 데브옵스 17기
 
-### 1~8주차
-> **Java (JDK17)**  
+### 1&#126;8주차(2024.12.09&#126;2025.01.31)
+#### **Java (JDK17)**  
 > IDE: Eclipse  
 > [프로젝트 폴더](./java/workspace/)  
 > [강의자료](./java/강의자료/)
 
-> **Spring**  
+|날짜|패키지|내용|
+|---|:---:|---|
+|2024.12.10|[day1210](./java/workspace/classProject/day1210/)|변수 출력 및 매개변수 출력|
+|2024.12.11|[day1211](./java/workspace/classProject/day1211/)|자료형 및 형변환|
+|2024.12.12|[day1212](./java/workspace/classProject/day1212/)|날짜 및 입출력, 기본 연산|
+|2024.12.13|[day1213](./java/workspace/classProject/day1213/)|반복문, 스위치, 제어문|
+|2024.12.16|[day1216](./java/workspace/classProject/day1216/)|난수 생성, 제어문|
+|2024.12.17|[day1217](./java/workspace/classProject/day1217/)|날짜 클래스|
+|2024.12.18|[day1218](./java/workspace/classProject/day1218/)|클래스, 객체|
+
+#### **Spring**  
+> [프로젝트 폴더](./spring/)  
 > IDE: Eclipse
 
-### 9~11주차
-> **React**  
+### 9&#126;11주차
+#### **React**  
+> [프로젝트 폴더](./react/)  
 > IDE: vscode
 
 ### 12주차
 
-### 13~22주차
+### 13&#126;22주차
