@@ -4,7 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Ex1Calendar {
+public class Ex1LocalDate {
 	// 년도와 월을 입력하면 해당월의 달력을 출력하시오.
 	// 달력이 제대로 나오게 하려면
 	// 1. 그 월의 1일이 무슨 요일인가?

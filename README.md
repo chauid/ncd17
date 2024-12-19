@@ -14,7 +14,8 @@
 |2024.12.13|[day1213](./java/workspace/classProject/day1213/)|반복문, 스위치, 제어문|
 |2024.12.16|[day1216](./java/workspace/classProject/day1216/)|난수 생성, 제어문|
 |2024.12.17|[day1217](./java/workspace/classProject/day1217/)|날짜 클래스|
-|2024.12.18|[day1218](./java/workspace/classProject/day1218/)|클래스, 객체|
+|2024.12.18|[day1218](./java/workspace/classProject/day1218/)|클래스, 객체, getter, setter|
+|2024.12.19|[day1219](./java/workspace/classProject/day1219/)|객체 배열, 생성자, method overload, ref type, 가변 인자|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
