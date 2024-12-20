@@ -1,6 +1,6 @@
 ## 네이버 클라우드 데브옵스 17기
 
-### 1&#126;8주차(2024.12.09&#126;2025.01.31)
+### 1&#126;8주차(2024.12.10&#126;2025.01.31)
 #### **Java (JDK17)**  
 > IDE: Eclipse  
 > [프로젝트 폴더](./java/workspace/)  
@@ -16,6 +16,7 @@
 |2024.12.17|[day1217](./java/workspace/classProject/day1217/)|날짜 클래스|
 |2024.12.18|[day1218](./java/workspace/classProject/day1218/)|클래스, 객체, getter, setter|
 |2024.12.19|[day1219](./java/workspace/classProject/day1219/)|객체 배열, 생성자, method overload, ref type, 가변 인자|
+|2024.12.20|[day1220](./java/workspace/classProject/day1220/)|추상 클래스, 메서드, 인터페이스|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
