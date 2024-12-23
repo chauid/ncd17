@@ -17,6 +17,7 @@
 |2024.12.18|[day1218](./java/workspace/classProject/day1218/)|클래스, 객체, getter, setter|
 |2024.12.19|[day1219](./java/workspace/classProject/day1219/)|객체 배열, 생성자, method overload, ref type, 가변 인자|
 |2024.12.20|[day1220](./java/workspace/classProject/day1220/)|추상 클래스, 메서드, 인터페이스|
+|2024.12.23|[day1223](./java/workspace/classProject/day1223/)|예외 처리, 파일 입출력, 클래스 다형성, JFrame|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  

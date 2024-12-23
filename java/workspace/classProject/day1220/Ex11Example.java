@@ -46,28 +46,33 @@ class Update implements Command {
 }
 
 public class Ex11Example {
+	public static void dbProcess(Command command) {
+		command.process();
+	}
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		Command command = null;
 		int choice;
 		while (true) {
 			System.out.print("1.추가 2.출력 3.삭제 4.수정 5.종료");
 			choice = sc.nextInt();
 			switch (choice) {
 			case 1:
-				Insert i = new Insert();
-				i.process();
+				command = new Insert();
+				command.process();
 				break;
 			case 2:
-				Select s = new Select();
-				s.process();
+				command = new Select();
+				command.process();
 				break;
 			case 3:
-				Delete d = new Delete();
-				d.process();
+				command = new Delete();
+				command.process();
 				break;
 			case 4:
-				Update u = new Update();
-				u.process();
+				command = new Update();
+				command.process();
 				break;
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
