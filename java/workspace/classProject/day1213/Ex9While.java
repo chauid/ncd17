@@ -43,6 +43,7 @@ public class Ex9While {
 		System.out.println("대문자 : "+upper);
 		System.out.println("소문자 : "+lower);
 		System.out.println("숫 자 : "+number);
+		sc.close();
 	}
 
 }

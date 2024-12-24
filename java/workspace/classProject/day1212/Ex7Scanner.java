@@ -19,7 +19,7 @@ public class Ex7Scanner {
 		System.out.println("나이를 입력하세요");
 		age=sc.nextInt();
 		System.out.println("내나이는 "+age+"세입니다");
-		
+		sc.close();
 	}
 
 }

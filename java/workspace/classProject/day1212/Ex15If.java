@@ -41,6 +41,7 @@ public class Ex15If {
 			dctotal=total*9/10;
 			System.out.println("10프로 DC된 금액은 "+dctotal+" 원입니다");
 		}
+		sc.close();
 	}
 
 }

@@ -31,6 +31,7 @@ public class Ex7While {
 		System.out.println("총 입력한 점수갯수:"+count);
 		System.out.println("점수의 총 합계:"+total);
 		System.out.printf("점수들의 평균 : %5.2f\n",avg);
+		sc.close();
 	}
 
 }

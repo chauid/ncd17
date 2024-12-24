@@ -24,6 +24,7 @@ public class Ex4Switch {
 			System.out.println("짝수입니다");
 		else
 			System.out.println("홀수입니다");
+		sc.close();
 	}
 
 }

@@ -33,6 +33,7 @@ public class Ex10Exam {
 		System.out.println("수량 : "+su+"개");
 		System.out.println("단가 : "+dan+"원");
 		System.out.println("총금액 : "+total+"원"+(su<5?"":"(할인됨)"));
+		sc.close();
 	}
 
 }

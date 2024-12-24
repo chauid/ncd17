@@ -19,6 +19,7 @@ public class Ex14If {
 		if(score<0 || score>100)//방법2
 		{
 			System.out.println("값의 범위를 벗어났습니다");
+			sc.close();
 			return;//현재 메서드를 종료한다
 		}
 		
@@ -34,7 +35,7 @@ public class Ex14If {
 			grade="F";
 		
 		System.out.printf("%d 점의 학점은 %s학점입니다\n",score,grade);
-			
+		sc.close();
 	}
 
 }

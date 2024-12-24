@@ -48,6 +48,7 @@ public class Ex3Switch {
 		}else {
 			System.out.printf("%d년 %d월은 %d일까지 있습니다",year,month,days);
 		}
+		sc.close();
 	}
 
 }

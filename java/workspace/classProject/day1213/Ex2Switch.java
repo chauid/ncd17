@@ -46,6 +46,7 @@ public class Ex2Switch {
 		default:
 			System.out.println("빨강과 초록을 제외한 색상");
 		}
+		sc.close();
 	}
 
 }

@@ -17,6 +17,7 @@ public class Ex9Scanner {
 		weight=sc.nextDouble();
 		System.out.println("** "+name+" 님의 키와 몸무게 **");
 		System.out.println("키 :"+height+"\t몸무게:"+weight);
+		sc.close();
 	}
 
 }

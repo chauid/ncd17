@@ -21,6 +21,7 @@ public class Ex8While {
 		}
 		
 		System.out.printf("1부터 %d까지의 합계는 %d입니다",n,sum);
+		sc.close();
 	}
 
 }

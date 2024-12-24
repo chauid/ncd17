@@ -9,17 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.Component;
-import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.BoxLayout;
-import java.awt.GridLayout;
-import java.awt.CardLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.SpringLayout;
-import javax.swing.border.TitledBorder;
-import javax.swing.JRadioButton;
 import javax.swing.JToggleButton;
 
 public class AppWindow {

@@ -17,6 +17,7 @@ public class Ex8Scanner {
 		sangpum=sc.nextLine();//버퍼의 엔터를 읽어온다(없을경우 키보드로부터 읽어온다)
 		
 		System.out.println(sangpum+" 상품 가격은 "+price+"원입니다");
+		sc.close();
 	}
 
 }

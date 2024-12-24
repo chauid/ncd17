@@ -22,6 +22,7 @@ public class Ex12For {
 		}
 		
 		System.out.println("1부터 "+n+" 까지의 합계:"+sum);
+		sc.close();
 	}
 
 }

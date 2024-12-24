@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Ex6Date {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//현재 날짜와 시간을 얻어보자
