@@ -1,10 +1,12 @@
 ## 네이버 클라우드 데브옵스 17기
 
 ### 1&#126;8주차(2024.12.10&#126;2025.01.31)
-#### **Java (JDK17)**  
+#### **Java (JDK17), SQL(Oracle DB)**  
 > IDE: Eclipse  
-> [프로젝트 폴더](./java/workspace/)  
-> [강의자료](./java/강의자료/)
+> DB: Oracle Database  
+> [Java 프로젝트 폴더](./java/workspace/)  
+> [SQL 프로젝트 폴더](./sql/)  
+> [강의자료](./강의자료/)
 
 |날짜|패키지|내용|
 |---|:---:|---|
@@ -16,10 +18,12 @@
 |2024.12.17|[day1217](./java/workspace/classProject/day1217/)|날짜 클래스|
 |2024.12.18|[day1218](./java/workspace/classProject/day1218/)|클래스, 객체, getter, setter|
 |2024.12.19|[day1219](./java/workspace/classProject/day1219/)|객체 배열, 생성자, method overload, ref type, 가변 인자|
-|2024.12.20|[day1220](./java/workspace/classProject/day1220/)|추상 클래스, 메서드, 인터페이스|
+|2024.12.20|[day1220](./java/workspace/classProject/day1220/), [day1220-2](./java/workspace/classProject/day1220_2/)|추상 클래스, 메서드, 인터페이스|
 |2024.12.23|[day1223](./java/workspace/classProject/day1223/)|예외 처리, 파일 입출력, 클래스 다형성, JFrame|
 |2024.12.24|[day1224](./java/workspace/classProject/day1224/)|컬렉션, 제네릭|
 |2024.12.26|[day1226](./java/workspace/classProject/day1226/)|파일 입출력, JTable|
+|2024.12.27|[day1227](./java/workspace/classProject/day1227/)|제네릭, 람다표현식, 쓰레드, 소켓통신|
+|2024.12.30|[day1230](./sql/day1230/)|Oracle DB, table, tablespace, DML, DCL, DDL, SubQuery|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
