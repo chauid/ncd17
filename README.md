@@ -24,6 +24,8 @@
 |2024.12.26|[day1226](./java/workspace/classProject/day1226/)|파일 입출력, JTable|
 |2024.12.27|[day1227](./java/workspace/classProject/day1227/)|제네릭, 람다표현식, 쓰레드, 소켓통신|
 |2024.12.30|[day1230](./sql/day1230/)|Oracle DB, table, tablespace, DML, DCL, DDL, SubQuery|
+|2024.12.31|[day1231](./sql/day1231/)|Oracle DB, DML: INSERT, SELECT, UPDATE, DELETE|
+|2025.01.02|[day0102](./sql/day0102/)|Oracle DB, join, Procedure, PL/SQL, MySQL|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
