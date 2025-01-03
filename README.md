@@ -26,6 +26,7 @@
 |2024.12.30|[day1230](./sql/day1230/)|Oracle DB, table, tablespace, DML, DCL, DDL, SubQuery|
 |2024.12.31|[day1231](./sql/day1231/)|Oracle DB, DML: INSERT, SELECT, UPDATE, DELETE|
 |2025.01.02|[day0102](./sql/day0102/)|Oracle DB, join, Procedure, PL/SQL, MySQL|
+|2025.01.03|[day0103](./sql/day0103/), [day0103](./java/workspace/classProject/day0103/)|MySQL|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
