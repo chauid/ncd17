@@ -7,7 +7,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class MariaDBConnect {
+public class Main {
 	private static final String DRIVER = "org.mariadb.jdbc.Driver";
 	private static final String DB_URL = "jdbc:mariadb://localhost:3307/test";
 	private static Connection connect = null;
@@ -16,7 +16,7 @@ public class MariaDBConnect {
 		return connect;
 	}
 
-	public MariaDBConnect() {
+	public Main() {
 		try {
 			Class.forName(DRIVER);
 			connect = DriverManager.getConnection(DB_URL, "root", "1234");
@@ -29,7 +29,7 @@ public class MariaDBConnect {
 	}
 
 	public static void main(String[] args) {
-		MariaDBConnect connectObj = new MariaDBConnect();
+		Main connectObj = new Main();
 		String query = "SELECT * FROM content";
 		Connection conn = connectObj.getConnect();
 		ResultSet rs = executeQuery(conn, query);

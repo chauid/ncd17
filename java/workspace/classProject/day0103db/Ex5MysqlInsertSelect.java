@@ -196,6 +196,33 @@ public class Ex5MysqlInsertSelect {
     	 *     1명이 삭제되면 1 반환
     	 *     해당이름이 없어서 삭제를 못했다면 0 반환
     	 */
+    	
+    	Connection conn=null;
+    	Statement stmt=null;
+    	String sql="delete from person where name='"+name+"'";
+    	
+    	conn=this.getConnection();
+    	try {
+			stmt=conn.createStatement();
+			int n=stmt.executeUpdate(sql);
+			if(n==0)
+				System.out.println("\""+name+"\" 님은 존재하지 않습니다");
+			else
+				System.out.println(n+" 명의 데이타가 삭제되었습니다");
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				stmt.close();
+				conn.close();
+			} catch (SQLException|NullPointerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+    			
     }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
