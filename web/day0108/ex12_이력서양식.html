@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gaegu&family=Jua&family=Nanum+Pen+Script&family=Playwrite+AU+SA:wght@100..400&family=Single+Day&display=swap" rel="stylesheet">
+
+    <style>
+        body *{
+            font-family: 'Jua';
+        }
+        div.main>div.title{
+            font-size: 40px;
+            width: 600px;
+            border:1px solid black;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            color: white;
+            background-color: orange;
+        }
+
+        div.main>table{
+            width: 600px;
+            border-collapse: collapse;
+            border:solid 3px black;
+            margin-top: 10px;
+        }
+        div.main>table tr{
+            height:35px;
+        }
+        div.main>table th,div.main>table td{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <back-button></back-button>
+<div class="main">
+    <div class="title">이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;력&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;서</div>
+
+    <table class="tb1">
+        <tr>
+            <th width="130">지원구분</th>
+            <!-- &nbsp; 공백한칸-->
+            <td width="160">신입(&nbsp;&nbsp;)/
+                    경력 (&nbsp;&nbsp;)</td>
+            <th width="130">지원부문</th>
+            <td width="160"></td>
+            <th width="130">희망연봉</th>
+            <td width="160" align="right">만원</td>
+        </tr>
+    </table>
+    <table class="tb2">
+        <tr>
+            <td width="180" rowspan="5" align="center">사 진</td>
+            <th width="130" bgcolor="orange">성 명</th>
+            <td width="200"></td>
+            <th width="100" bgcolor="orange">영문</th>
+            <td width="200"></td>
+        </tr>
+        <tr>
+            <th width="130" bgcolor="orange">생년월일</th>
+            <td width="200"></td>
+            <th width="100" bgcolor="orange">성별</th>
+            <td width="200" align="center">남(       )/여(  )</td>
+        </tr>
+        <tr>
+            <th width="130" bgcolor="orange">현주소</th>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th width="130" bgcolor="orange">연락처</th>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th width="130" bgcolor="orange">이메일</th>
+            <td colspan="3"></td>
+        </tr>
+    </table>
+    <table class="tb3">
+        <tr bgcolor="orange">
+            <th width="50" rowspan="4">
+               학<br>력<br>사<br>항
+            </th>
+            <th width="200">기간</th>
+            <th width="160">학교명</th>
+            <th width="120">전공</th>
+            <th width="160">학점</th>
+        </tr>
+        <tr>
+            <td align="center">-</td>
+            <td align="right">고등학교</td>
+            <td></td>
+            <td align="center">/</td>
+        </tr>
+        <tr>
+            <td align="center">-</td>
+            <td align="right">대학교</td>
+            <td></td>
+            <td align="center">/</td>
+        </tr>
+        <tr>
+            <td align="center">-</td>
+            <td align="right">대학원</td>
+            <td></td>
+            <td align="center">/</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

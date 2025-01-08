@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        div.two>img {
+            width: 100px;
+            height: 120px;
+            border-style: groove;
+            border-width: 5px;
+            border-color: hotpink;
+        }
+
+        div.three>img {
+            width: 100px;
+            height: 100px;
+            border: solid 2px gray;
+            border-radius: 100px;
+            /*모서리에 대한 각도*/
+        }
+
+        div.one>img {
+            /*4모서리의 각도를 각각 다르게 줄수도 있다*/
+            border-radius: 10px 20px 30px 40px;
+        }
+
+        #twoloc {
+            position: absolute;
+            left: 400px;
+            top: 100px;
+            border: solid 2px gray;
+            width: 300px;
+            height: 150px;
+            text-align: center;
+            /*수평방향의 가운데*/
+            padding-top: 20px;
+            /*상단의 안쪽여백지정*/
+        }
+
+        div.three>h3 {
+            width: 300px;
+            text-align: center;
+            border: inset 4px gold;
+            /*글자에 대한 그림자*/
+            text-shadow: 3px 3px 3px gray;
+        }
+
+        div.three {
+            border: solid 5px red;
+            width: 400px;
+            /*해당 요소에 대한 그림자*/
+            box-shadow: 5px 5px 5px orange;
+            /*브라우저 크기를 변경해도 우측 하단으로 고정된다*/
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <h2>imag tag 연습</h2>
+    <div class="one">
+        <img alt="박보영" src="../web_image/photo1/12.jpg" title="박보영입니다" width="100" border="5" hspace="20" vspace="20">
+        하늘은 맑고 바람이 좋습니다<br>
+        오늘 점심은 뭐먹을까요?
+    </div>
+    <div class="two" id="twoloc">
+        <img alt="수지" src="../web_image/photo1/19.jpg">
+        <img alt="박신혜" src="../web_image/photo1/13.jpg">
+    </div>
+    <div class="three">
+        <h3>Shop 제품들</h3>
+        <img alt="" src="../web_image/photo2/14.jpg" title="신발들">
+        <img alt="" src="../web_image/photo2/30.jpg" title="머리띠">
+    </div>
+
+</body>
+
+</html>

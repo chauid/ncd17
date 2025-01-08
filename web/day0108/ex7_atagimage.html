@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        div.figure>marquee>figure {
+            float: left;
+            width: 110px;
+        }
+
+        div.figure>marquee>figure>figcaption {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <marquee>Have a <mark>Nice</mark> Day!!</marquee>
+    <!--behavior:기본은 scroll 이외 slide,alternate-->
+    <marquee width="400" behavior="slide">다들 안녕하세요~</marquee>
+    <!--direction:기본값은 left-->
+    <marquee width="400" behavior="alternate" direction="right">다들 안녕하세요~</marquee>
+    <div>
+        <a href="http://www.naver.com">
+            <img src="../web_image/photo1/K-052.png"><b>Naver</b>
+        </a>
+    </div>
+    <div>
+        <a href="http://www.nate.com">
+            <figure>
+                <img src="../web_image/photo1/K-041.png">
+                <figcaption style="padding-left: 40px;">
+                    <b>Nate</b>
+                </figcaption>
+            </figure>
+        </a>
+        <a href="../web_image/photo1/K-049.png">
+            <figure>
+                <img src="../web_image/photo1/K-049.png">
+                <figcaption>
+                    <b>예쁜 유리잔</b>
+                </figcaption>
+            </figure>
+        </a>
+    </div>
+    <hr>
+    <div class="figure">
+        <marquee>
+            <figure>
+                <img src="../web_image/photo1/17.jpg">
+                <figcaption>
+                    <b>신민아</b>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../web_image/photo1/18.jpg">
+                <figcaption>
+                    <b>신세경</b>
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="../web_image/photo1/15.jpg">
+                <figcaption>
+                    <b>설현</b>
+                </figcaption>
+            </figure>
+        </marquee>
+    </div>
+</body>
+
+</html>

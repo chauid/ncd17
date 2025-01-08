@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gaegu&family=Jua&family=Nanum+Pen+Script&family=Playwrite+AU+SA:wght@100..400&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <style>
+        h3 {
+            color: palevioletred;
+            background-color: greenyellow;
+            width: 600px;
+            text-align: center;
+            font-family: 'Jua';
+        }
+
+        /*hover:마우스를 올렸을때의 스타일 적용*/
+        h3:hover {
+            color: blue;
+            background-color: pink;
+            text-shadow: 3px 3px 3px gray;
+            /*pointer:손가락모양,crosshair:십자모양*/
+            cursor: pointer;
+        }
+
+        /*active:마우스로 클릭했을때의 스타일적용*/
+        h3:active {
+            border: groove 5px gold;
+        }
+
+        /*가로방향으로 메뉴가 나오도록 스타일을 적용시켜보자*/
+        div.menu>ul>li {
+            list-style: none;
+            /*li앞의 표식 없애기*/
+            float: left;
+            /*모든 요소들을 가로방향으로 나열*/
+            width: 100px;
+            border: solid 1px gray;
+            margin-right: 10px;
+            /*margin:요소밖의 여백*/
+            font-size: 16px;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            /*한줄일경우 높이하고 행높이를 같게 주면 세로방행의 가운데로 온다*/
+            cursor: pointer;
+            border-radius: 30px;
+            background-color: #afeeee;
+            font-family: 'Nanum Pen Script';
+        }
+
+        div.menu>ul>li:hover {
+            color: white;
+            background-color: black;
+            box-shadow: 5px 5px 5px gray;
+        }
+
+        h1.one {
+            font-family: 'Playwrite AU SA';
+        }
+
+        h1.two {
+            font-family: 'Caveat';
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <h1 class="one">Have a Good Day!!</h1>
+    <h1 class="two">Have a Good Day!!</h1>
+    <h3>UL 을 이용한 간단한 가로메뉴</h3>
+    <div class="menu">
+        <ul>
+            <li>Home</li>
+            <li>샵소개</li>
+            <li>방명록</li>
+            <li>게시판</li>
+            <li>오시는길</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

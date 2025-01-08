@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        div.tb1>table {
+            border-collapse: collapse;
+            /*seperate  가 기본값*/
+        }
+
+        div.tb2 {
+            margin-top: 30px;
+        }
+
+        div.tb2>table {
+            width: 400px;
+            border-collapse: collapse;
+            border: groove 10px gold;
+        }
+
+        div.tb2>table img {
+            width: 130px;
+        }
+
+        div.tb2 tr td {
+            border: dotted 1px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <div class="tb1">
+        <table border="1" style="width: 300px;">
+            <caption>[테이블 #1]</caption>
+            <tr height="40" align="center" bgcolor="orange">
+                <td>이름</td>
+                <td align="right">핸드폰</td>
+            </tr>
+            <tr height="50">
+                <!--align:left(기본값),center,right-->
+                <td align="center">이영자</td>
+                <td bgcolor="#ffc">010-1111-3333</td>
+            </tr>
+            <tr height="100">
+                <!--valign: middle(기본값),top,bottom-->
+                <td valign="top">강호동</td>
+                <td valign="bottom" style="background-color: pink;color:blue;">010-5656-7878</td>
+            </tr>
+        </table>
+    </div>
+    <div class="tb2">
+        <table>
+            <tr>
+                <!--rowspan:여러행합치기,colspan:여러열합치기-->
+                <td rowspan="4" align="center">
+                    <img src="../web_image/photo1/19.jpg">
+                </td>
+                <td>이름 : 수지</td>
+            </tr>
+            <tr>
+                <td>나이: 23세</td>
+            </tr>
+            <tr>
+                <td>핸드폰:010-5555-6666</td>
+            </tr>
+            <tr>
+                <td>주소: 서울시 강남구</td>
+            </tr>
+            <tr bgcolor="orange">
+                <td colspan="2" align="center">
+                    <b style="font-size: 1.5em;">비트캠프 17기 수강생</b>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        /*범용 클래스-모든 태그에 적용하려면  .클래스명*/
+        .happy {
+            font-size: 20px;
+            background-color: pink;
+            border: solid 5px green;
+        }
+
+        /*특정태그에서만 사용가능한 클래스 만들기*/
+        div.hello {
+            color: orange;
+            background-color: cyan;
+            font-size: 2em;
+            width: 300px;
+        }
+
+        /* id는 # 으로 표현,아이디는 고유이름이므로 앞에 태그는 안써도된다*/
+        #one {
+            border: dotted 2px gray;
+            background-color: #fef;
+        }
+
+        /* #two{
+            border: dashed 2px green;
+            color: blue;
+            background-color: #ccf;
+        } */
+
+        /* > : 바로 아래 태그, 공백:모든 자식태그*/
+        div.java>div {
+            font-family: 'Impact';
+            color: red;
+        }
+
+        div.java>b {
+            font-size: 2em;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <span style="color: blueviolet;" class="happy">
+        오늘은 수요일입니다</span>
+    <br><br>
+    <b class="happy">Happy Day!!!</b>
+    <u class="happy">Underline style</u>
+    <br><br>
+    <div class="hello">Hello!!</div>
+    <b class="hello">hello class 적용되나요?</b><!--적용안됨-->
+    <div class="hello happy">안녕하세요</div><!--여러클래스 적용시 공백으로 구분-->
+    <hr>
+    <div>HTML study!!</div>
+    <div id="one">Div Class ID One</div>
+    <div class="java">
+        Div Class Java
+        <div id="two">
+            Div ID Two
+        </div>
+        <div>
+            div class java 의 아래태그 div
+        </div>
+        <b>div class java 의 아래태그 b</b>
+    </div>
+</body>
+
+</html>
