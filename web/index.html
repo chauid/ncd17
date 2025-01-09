@@ -4,17 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fonts.css">
     <style>
         body {
             margin: 0px;
             padding: 0px;
+            font-family: 'Pretendard Variable', sans-serif;
         }
 
         .grid-container {
+            margin: 0px auto;
             padding: 15px;
             justify-content: center;
             display: grid;
-            grid-template-columns: repeat(auto-fit, 250px);
+            grid-template-columns: repeat(auto-fit, 280px);
             gap: 10px;
         }
 
@@ -22,61 +25,58 @@
             padding: 10px 5px;
             background-color: #f5f5f5;
             border-radius: 10px;
-        }
 
-        .grid-item>strong {
-            display: block;
-            padding: 5px 10px;
-        }
+            &>strong {
+                display: block;
+                padding: 5px 10px;
+            }
 
-        .grid-item>div {
-            min-height: 200px;
-            max-height: 250px;
-            overflow-y: scroll;
-            margin: 2px 5px;
-            border-radius: 10px;
-            scrollbar-width: 7px;
-        }
+            &>div {
+                min-height: 200px;
+                max-height: 250px;
+                overflow-y: scroll;
+                margin: 2px 5px;
+                border-radius: 10px;
+                scrollbar-width: 7px;
 
-        .grid-item>div::-webkit-scrollbar {
-            width: 7px;
-        }
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
 
-        .grid-item>div::-webkit-scrollbar-thumb {
-            background-color: #e2e2e2;
-            border-radius: 10px;
-        }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #e2e2e2;
+                    border-radius: 10px;
+                }
 
-        .grid-item>div::-webkit-scrollbar-track {
-            background-color: #ffffff00;
-        }
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #afafaf;
+                }
 
-        .grid-item>div::-webkit-scrollbar-thumb:hover {
-            background-color: #afafaf;
-        }
+                &::-webkit-scrollbar-thumb:active {
+                    background-color: #9b9b9b;
+                }
 
-        .grid-item>div::-webkit-scrollbar-thumb:active {
-            background-color: #9b9b9b;
-        }
+                &>ul {
+                    margin: 5px;
+                    padding: 0px 10px;
+                    list-style-type: none;
+                    font-size: 1.1rem;
 
-        .grid-item>div>ul {
-            margin: 5px;
-            padding: 0px 10px;
-            list-style-type: none;
-            font-size: 1.1rem;
-        }
+                    &>a {
+                        display: block;
+                        margin: 2px 0px;
+                        padding: 3px 5px;
+                        border-radius: 7px;
+                        text-decoration: none;
+                        color: black;
+                        transition-duration: 0.05s;
 
-        .grid-item>div>ul>a {
-            display: block;
-            margin: 2px 0px;
-            padding: 2.5px 5px;
-            border-radius: 7px;
-            text-decoration: none;
-            color: black;
-        }
-
-        .grid-item>div>ul>a:hover {
-            background-color: #e0e0e0;
+                        &:hover {
+                            background-color: #e0e0e0;
+                        }
+                    }
+                }
+            }
         }
     </style>
     <title>Index Page</title>
@@ -119,6 +119,28 @@
                     <a href="./day0108/ex10_table.html">ex10_table</a>
                     <a href="./day0108/ex11_table.html">ex11_table</a>
                     <a href="./day0108/ex12_이력서양식.html">ex12_이력서양식asd</a>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-item">
+            <strong>2025.01.09</strong>
+            <div>
+                <ul>
+                    <a href="./day0109/ex1_borderstyle.html">ex1_borderstyle</a>
+                    <a href="./day0109/ex2_resize.html">ex2_resize</a>
+                    <a href="./day0109/ex3_semantictag.html">ex3_semantictag</a>
+                    <a href="./day0109/ex4_transform.html">ex4_transform</a>
+                    <a href="./day0109/ex4_transition.html">ex4_transition</a>
+                    <a href="./day0109/ex5_transitionmenu.html">ex5_transitionmenu</a>
+                    <a href="./day0109/ex6_backgroundimage.html">ex6_backgroundimage</a>
+                    <a href="./day0109/ex7_반응형_가변.html">ex7_반응형_가변</a>
+                    <a href="./day0109/ex8_반응형_미디어쿼리.html">ex8_반응형_미디어쿼리</a>
+                    <a href="./day0109/ex9_반응형_미디어쿼리.html">ex9_반응형_미디어쿼리</a>
+                    <a href="./day0109/ex10_formtag.html">ex10_formtag</a>
+                    <a href="./day0109/ex11_bootstrap.html">ex11_bootstrap</a>
+                    <a href="./day0109/ex12_bootstrap.html">ex12_bootstrap</a>
+                    <a href="./day0109/ex13_event.html">ex13_event</a>
+                    <a href="./day0109/ex14_alertconfirm.html">ex14_alertconfirm</a>
                 </ul>
             </div>
         </div>

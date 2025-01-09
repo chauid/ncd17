@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        table{
+            width: 400px;
+            border: 5px groove gray;
+            border-collapse: collapse;
+        }
+
+        th,td{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <back-button></back-button>
+<h2>HTML5 FormTag 들</h2>
+<table>
+    <tr>
+        <th width="100">text</th>
+        <td>
+            <input type="text" value="Hello">
+        </td>
+    </tr>
+    <tr>
+        <th>password</th>
+        <td>
+            <input type="password" value="12345">
+        </td>
+    </tr>
+    <tr>
+        <th>checkbox</th>
+        <td>
+            <!--label 안에 checkbox를 넣으면 글자를 클릭해도 체크가됨-->
+            <label><input type="checkbox">운전면허</label>
+            &nbsp; &nbsp; &nbsp;
+            <label><input type="checkbox" checked>운전면허</label>
+        </td>
+    </tr>
+    <tr>
+        <th>radio</th>
+        <td>
+            <!--radio 는 같은 그룹으로 묶을경우 반드시 name이 같아야한다다-->
+            <label>
+                <input type="radio" value="man" name="gender" checked>남자
+            </label>
+            <label>
+                <input type="radio" value="women" name="gender">여자
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <th>number</th>
+        <td>
+            <input type="number" value="10" min="0" max="20" step="2">
+        </td>
+    </tr>
+    <tr>
+        <th>color</th>
+        <td>
+            <input type="color" value="#ccffff">
+        </td>
+    </tr>
+    <tr>
+        <th>date</th>
+        <td>
+            <input type="date" value="2025-01-09">
+            &nbsp;
+            <input type="datetime-local" value="2025-01-09 13:00">
+        </td>
+    </tr>
+    <tr>
+        <th>button</th>
+        <td>
+            <input type="button" value="Ok">
+            &nbsp&nbsp;
+            <button type="button">Cancel</button>
+        </td>
+    </tr>
+    <tr>
+        <th>submit(폼단위전송)</th>
+        <td>
+            <input type="submit" value="전송">
+            &nbsp;
+            <button type="submit">전송</button>
+            &nbsp;
+            <!--submit 기능인데 버튼이미지로-->
+            <input type="image" src="../web_image/mycar/mycar12.png" width="100" height="50">
+        </td>
+    </tr>
+    <tr>
+        <th>select</th>
+        <td>
+            <select>
+                <option>java</option>
+                <option selected>html5</option>
+                <option>javascript</option>
+                <option>springboot</option>
+                <option>oracle</option>
+            </select>
+            &nbsp;
+            <select>
+                <option selected disabled hidden>도시선택</option>
+                <option>서울</option>
+                <option>성남시</option>
+                <option>용인시</option>
+                <option>제주도</option>
+                <option>부산</option>
+            </select>
+            &nbsp;
+            <select size="3">
+                <option>Java</option>
+                <option>Mysql</option>
+                <option>Spring</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>progress</th>
+        <td>
+            <progress value="30" max="100"></progress>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

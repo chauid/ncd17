@@ -1,11 +1,12 @@
 ## 네이버 클라우드 데브옵스 17기
 
 ### 1&#126;8주차(2024.12.10&#126;2025.01.31)
-#### **Java (JDK17), SQL**  
-> IDE: Eclipse  
+#### **Java (JDK17), SQL, Web**  
+> IDE: Eclipse, Visual Studio Code  
 > DB: Oracle DB, MySQL  
-> [Java 프로젝트 폴더](./java/workspace/)  
+> [Java 프로젝트 폴더](./java/workspace/classProject/)  
 > [SQL 프로젝트 폴더](./sql/)  
+> [Web 프로젝트 폴더](./web/)  
 > [강의자료](./강의자료/)
 
 |날짜|패키지|내용|
@@ -30,6 +31,7 @@
 |2025.01.06|[day0106](./java/workspace/classProject/day0106/), [day0106db](./java/workspace/classProject/day0106db/)|JDBC, JTable|
 |2025.01.07|[day0107db](./java/workspace/classProject/day0107db/), [day0107](./web/day0107/)|JDBC, JTable, Web|
 |2025.01.08|[day0108](./web/day0108/)|Web|
+|2025.01.09|[day0109](./web/day0109/)|Web|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  

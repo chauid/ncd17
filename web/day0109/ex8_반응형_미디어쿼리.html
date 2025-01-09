@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        /*공통*/
+        h1 {
+            font: bold 2em "궁서";
+            text-align: center;
+            background-color: pink;
+        }
+
+        /*1024 이상일경우 적용*/
+        @media all and (min-width:1024px) {
+            body {
+                background: url(../web_image/photo1/K-035.png) no-repeat;
+                background-size: cover;
+            }
+
+            h1 {
+                color: yellow;
+                background-color: green;
+            }
+        }
+
+        /*700~1023 적용*/
+        @media all and (min-width:700px) and (max-width:1023px) {
+            body {
+                background: url(../web_image/mycar/mycar13.png) no-repeat;
+                background-size: cover;
+            }
+
+            h1 {
+                color: gray;
+                background-color: yellow;
+            }
+        }
+
+        /*~699 적용*/
+        @media all and (max-width:699px) {
+            body {
+                background: url(../web_image/mycar/mycar11.png) no-repeat center center;
+                background-size: 200px 200px;
+            }
+
+            h1 {
+                color: palevioletred;
+                background-color: gold;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <h1>반응형 테스트</h1>
+</body>
+
+</html>

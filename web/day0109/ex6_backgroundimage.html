@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+        }
+
+        #one {
+            background-image: url(../web_image/mycar/mycar13.png);
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+            /*기본값은 repeat*/
+            background-position: right bottom;
+        }
+
+        #two {
+            background: url(../web_image/mycar/mycar7.png);
+            background-size: 200px 170px;
+        }
+
+        #three {
+            background: url(../web_image/mycar/mycar7.png) center center;
+            background-size: cover;
+            /*배경이미지가 클경우 짤리더라도 주어진 영역을 완전히 덮을수 있도록 맞춰준다*/
+        }
+
+        #four {
+            background: url(../web_image/mycar/mycar7.png) no-repeat center center;
+            background-size: contain;
+            /*빈공간이 생기더라도 이미지 전체가 나오게 해준다*/
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+
+</body>
+
+</html>
