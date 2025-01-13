@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>502 study</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gaegu&family=Jua&family=Nanum+Pen+Script&family=Playwrite+AU+SA:wght@100..400&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body * {
+            font-family: 'Jua';
+        }
+
+        div.number {
+            position: absolute;
+            left: 150px;
+            top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <back-button></back-button>
+    <div style="margin: 30px;width:300px;">
+        <h5 class="alert alert-danger">숫자알아맞추기 게임</h5>
+        <input type="text" class="su form-control" style="width:100px;" maxlength="3" autofocus>
+        <div class="number"></div>
+    </div>
+    <div class="result" style="margin: 10px 30px;"></div>
+
+    <script>
+        //1~100 사이의 임의의 숫자구하기
+        let rndSu = parseInt(Math.random() * 100) + 1;
+        console.log(rndSu);
+
+        //숫자입력시 이벤트
+        document.querySelector(".su").onkeyup = function (e) {
+            if (isNaN(this.value)) {
+                //isNaN(값):문자가 섞여있을경우 true
+                alert("문자입력은 안돼요!!!!");
+                this.value = "";
+                return;//이벤트 종료
+            }
+
+            //숫자에 해당하는 이미지 넣기,length,charAt이용
+            let s = "";
+            for (let i = 0; i < this.value.length; i++) {
+                //i번째의 숫자 얻기
+                let num = this.value.charAt(i);
+                console.log(num);
+                s += `<img src="../web_image/num/${num}.gif" width=40>`;
+            }
+            document.querySelector("div.number").innerHTML = s;
+
+            //실제 랜덤값과 비교는 엔터를 눌럿을때 비교한다
+            let r = "";
+            if (e.keyCode == 13) {
+                //입력값을 숫자타입으로 얻는다
+                let su = Number(this.value);
+                if (su > rndSu)
+                    r += su + " 보다 작습니다<br>";
+                else if (su < rndSu)
+                    r += su + " 보다 큽니다<br>";
+                else {
+                    r += "정답입니다<br>";
+                    r += `<img src="../web_image/photo1/K-054.png" width=120>
+                    <br><h6>레스토랑 상품권을 드립니다</h6>`;
+                }
+
+                document.querySelector("div.result").innerHTML += r;
+                this.value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
