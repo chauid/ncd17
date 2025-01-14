@@ -32,7 +32,9 @@
 |2025.01.07|[day0107db](./java/workspace/classProject/day0107db/), [day0107](./web/day0107/)|JDBC, JTable, Web|
 |2025.01.08|[day0108](./web/day0108/)|Web|
 |2025.01.09|[day0109](./web/day0109/)|Web|
-|2025.01.09|[day0110](./web/day0110/)|Web|
+|2025.01.10|[day0110](./web/day0110/)|Web|
+|2025.01.13|[day0113](./web/day0113/)|Web|
+|2025.01.14|[day0114](./web/day0114/)|Web|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  

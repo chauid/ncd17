@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>502 study</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gaegu&family=Jua&family=Nanum+Pen+Script&family=Playwrite+AU+SA:wght@100..400&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body * {
+            font-family: 'Jua';
+        }
+
+        .mylotto {
+            margin: 20px 20px;
+            border: 5px solid gray;
+            border-radius: 30px;
+            padding: 17px 20px;
+            width: 500px;
+            height: 100px;
+            background-color: #e0ffff;
+        }
+
+        .mylotto>.lotto {
+            float: left;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 100px;
+            border: 1px solid black;
+            margin-right: 15px;
+            font-size: 20px;
+            background-color: #9acd32;
+            color: white;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let lotto = document.querySelectorAll(".mylotto>.lotto");
+            lotto[1].style.backgroundColor = "#db7093";
+            lotto[4].style.backgroundColor = "#48d1cc";
+            lotto[5].style.backgroundColor = "#eee8aa";
+            lotto[5].style.color = "black";
+
+            //버튼이벤트
+            document.querySelector("#btnlotto").onclick = function () {
+                //6개 크기의 배열 선언
+                let num = new Array(6);
+
+                //배열에 중복되지 않은 1~45 의 난수를 구한다
+                for (let i = 0; i < num.length; i++) {
+                    num[i] = parseInt(Math.random() * 45) + 1;//1~45사이의 난수
+                    for (let j = 0; j < i; j++) {
+                        if (num[i] == num[j]) {
+                            i--;
+                            break;
+                        }
+                    }
+                }
+                //오름차순으로 정렬한다
+                for (let i = 0; i < num.length - 1; i++) {
+                    for (let j = i + 1; j < num.length; j++) {
+                        if (num[i] > num[j]) {
+                            let temp = num[i];
+                            num[i] = num[j];
+                            num[j] = temp;
+                        }
+                    }
+                }
+                //위의 변수 lotto에 정렬된 숫자를 넣어준다
+                for (let i = 0; i < lotto.length; i++) {
+                    lotto[i].innerHTML = num[i];
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <back-button></back-button>
+    <div style="margin: 30px 100px;" class="mydate">
+        <h5><b style="color: red;;">1234</b>회 로또결과</h5>
+        <script>
+            let date = new Date();
+            document.write(`<h6>${date.getFullYear()}-${date.getMonth() + 1}
+                    -${date.getDate()}`);
+        </script>
+    </div>
+    <div class="mylotto">
+        <div class="lotto">1</div>
+        <div class="lotto">1</div>
+        <div class="lotto">1</div>
+        <div class="lotto">1</div>
+        <div class="lotto">1</div>
+        <div class="lotto">1</div>
+    </div>
+    <button type="button" class="btn btn-success" id="btnlotto" style="margin: 20px 200px;">로또숫자구하기</button>
+</body>
+
+</html>
