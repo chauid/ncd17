@@ -6,7 +6,6 @@
 > DB: Oracle DB, MySQL  
 > [Java 프로젝트 폴더](./java/workspace/classProject/)  
 > [SQL 프로젝트 폴더](./sql/)  
-> [Web 프로젝트 폴더](./web/)  
 > [강의자료](./강의자료/)
 
 |날짜|패키지|내용|
@@ -30,11 +29,7 @@
 |2025.01.03|[day0103](./sql/day0103/), [day0103](./java/workspace/classProject/day0103/), [day0103db](./java/workspace/classProject/day0103db/)|MySQL, JDBC|
 |2025.01.06|[day0106](./java/workspace/classProject/day0106/), [day0106db](./java/workspace/classProject/day0106db/)|JDBC, JTable|
 |2025.01.07|[day0107db](./java/workspace/classProject/day0107db/), [day0107](./web/day0107/)|JDBC, JTable, Web|
-|2025.01.08|[day0108](./web/day0108/)|Web|
-|2025.01.09|[day0109](./web/day0109/)|Web|
-|2025.01.10|[day0110](./web/day0110/)|Web|
-|2025.01.13|[day0113](./web/day0113/)|Web|
-|2025.01.14|[day0114](./web/day0114/)|Web|
+|2025.01.08&#126; 2025.01.15|[web](./web/)|HTML, CSS, JS, jQuery|
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
