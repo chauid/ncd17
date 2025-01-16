@@ -36,16 +36,29 @@
         //문제 1
         //.largephoto 의 위치를 left:100px,top:300px,border:10px solid gold
         //로 위치 변경(css사용)
-
+        $(".largephoto").css({
+            /*속성값은 한단어일경우는 따옴표("")생략가능,-이들어가는
+            속성은 반드시 따옴표로 감싸야함*/
+            position: "absolute",
+            left: "100px",
+            top: "330px",
+            border: "10px solid gold"
+        });
 
         //문제2
         //.shop 에 마우스를 올리면 사진을 추출해서 .largephoto 의 사진을 변경하시오
-
+        $(".shop").mouseover(function () {
+            let srcImg = $(this).attr("src");
+            //큰사진에 적용
+            $(".largephoto").attr("src", srcImg);
+        });
 
         //문제3
         //.largephoto 에 마우스를 올리면 해당 이미지 아래에
         // "안녕하세요!! 라는 메세지를 추가하시오"
-
+        $(".largephoto").mouseover(function () {
+            $(this).after("<h6>안녕하세요</h6>");
+        });
     </script>
 </body>
 
