@@ -4,233 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="module" src="./components/search-input.js"></script>
     <link rel="stylesheet" href="fonts.css">
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-            font-family: 'Pretendard Variable', sans-serif;
-        }
-
-        .grid-container {
-            margin: 0px auto;
-            padding: 15px;
-            justify-content: center;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, 280px);
-            gap: 10px;
-        }
-
-        .grid-item {
-            padding: 10px 5px;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-
-            &>strong {
-                display: block;
-                padding: 5px 10px;
-            }
-
-            &>div {
-                min-height: 200px;
-                max-height: 250px;
-                overflow-y: scroll;
-                margin: 2px 5px;
-                border-radius: 10px;
-                scrollbar-width: 7px;
-
-                &::-webkit-scrollbar {
-                    width: 6px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: #e2e2e2;
-                    border-radius: 10px;
-                }
-
-                &::-webkit-scrollbar-thumb:hover {
-                    background-color: #afafaf;
-                }
-
-                &::-webkit-scrollbar-thumb:active {
-                    background-color: #9b9b9b;
-                }
-
-                &>ul {
-                    margin: 5px;
-                    padding: 0px 10px;
-                    list-style-type: none;
-                    font-size: 1.1rem;
-
-                    &>a {
-                        display: block;
-                        margin: 2px 0px;
-                        padding: 3px 5px;
-                        border-radius: 7px;
-                        text-decoration: none;
-                        color: black;
-                        transition-duration: 0.1s;
-
-                        &:hover {
-                            background-color: #e0e0e0;
-                        }
-
-                        &:active {
-                            background-color: #c7c7c7;
-                        }
-                    }
-                }
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
     <title>Index Page</title>
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="grid-item">
-            <strong>2024.12.11</strong>
-            <div>
-                <ul>
-                    <a href="day1211/ex1_test.html">ex1_test</a>
-                    <a href="day1211/ex2_hello.html">ex2_hello</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.07</strong>
-            <div>
-                <ul>
-                    <a href="./day0107">day0107</a>
-                    <a href="./day0107/ex1_htmltag.html">ex1_htmltag</a>
-                    <a href="./day0107/ex2_style.html">ex2_style</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.08</strong>
-            <div>
-                <ul>
-                    <a href="./day0108/ex1_classstyle.html">ex1_classstyle</a>
-                    <a href="./day0108/ex2_image.html">ex2_image</a>
-                    <a href="./day0108/ex3_imagepre.html">ex3_imagepre</a>
-                    <a href="./day0108/ex4_olul.html">ex4_olul</a>
-                    <a href="./day0108/ex5_ul가로메뉴.html">ex5_ul가로메뉴</a>
-                    <a href="./day0108/ex6_atag.html">ex6_atag</a>
-                    <a href="./day0108/ex7_atagimage.html">ex7_atagimage</a>
-                    <a href="./day0108/ex8_iframe.html">ex8_iframe</a>
-                    <a href="./day0108/ex9_table.html">ex9_table</a>
-                    <a href="./day0108/ex10_table.html">ex10_table</a>
-                    <a href="./day0108/ex11_table.html">ex11_table</a>
-                    <a href="./day0108/ex12_이력서양식.html">ex12_이력서양식asd</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.09</strong>
-            <div>
-                <ul>
-                    <a href="./day0109/ex1_borderstyle.html">ex1_borderstyle</a>
-                    <a href="./day0109/ex2_resize.html">ex2_resize</a>
-                    <a href="./day0109/ex3_semantictag.html">ex3_semantictag</a>
-                    <a href="./day0109/ex4_transform.html">ex4_transform</a>
-                    <a href="./day0109/ex4_transition.html">ex4_transition</a>
-                    <a href="./day0109/ex5_transitionmenu.html">ex5_transitionmenu</a>
-                    <a href="./day0109/ex6_backgroundimage.html">ex6_backgroundimage</a>
-                    <a href="./day0109/ex7_반응형_가변.html">ex7_반응형_가변</a>
-                    <a href="./day0109/ex8_반응형_미디어쿼리.html">ex8_반응형_미디어쿼리</a>
-                    <a href="./day0109/ex9_반응형_미디어쿼리.html">ex9_반응형_미디어쿼리</a>
-                    <a href="./day0109/ex10_formtag.html">ex10_formtag</a>
-                    <a href="./day0109/ex11_bootstrap.html">ex11_bootstrap</a>
-                    <a href="./day0109/ex12_bootstrap.html">ex12_bootstrap</a>
-                    <a href="./day0109/ex13_event.html">ex13_event</a>
-                    <a href="./day0109/ex14_alertconfirm.html">ex14_alertconfirm</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.10</strong>
-            <div>
-                <ul>
-                    <a href="./day0110/ex1_var_let.html">ex1_var_let</a>
-                    <a href="./day0110/ex2_for.html">ex2_for</a>
-                    <a href="./day0110/ex3_type.html">ex3_type</a>
-                    <a href="./day0110/ex4_속성변경.html">ex4_속성변경</a>
-                    <a href="./day0110/ex5_속성변경.html">ex5_속성변경</a>
-                    <a href="./day0110/ex6_글자속성변경.html">ex6_글자속성변경</a>
-                    <a href="./day0110/ex7_selectevent.html">ex7_selectevent</a>
-                    <a href="./day0110/ex8_innerHTML.html">ex8_innerHTML</a>
-                    <a href="./day0110/ex9_class적용.html">ex9_class적용</a>
-                    <a href="./day0110/ex10_array.html">ex10_array</a>
-                    <a href="./day0110/ex11_전체구구단출력문제.html">ex11_전체구구단출력문제</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.13</strong>
-            <div>
-                <ul>
-                    <a href="./day0113/ex1_querySelector.html">ex1_querySelector</a>
-                    <a href="./day0113/ex2_selectevent.html">ex2_selectevent</a>
-                    <a href="./day0113/ex3_inputTag.html">ex3_inputTag</a>
-                    <a href="./day0113/ex4_숫자알아맞추기.html">ex4_숫자알아맞추기</a>
-                    <a href="./day0113/ex5_querySelectorAll.html">ex5_querySelectorAll</a>
-                    <a href="./day0113/ex6_elements.html">ex6_elements</a>
-                    <a href="./day0113/ex7_js파일분리.html">ex7_js파일분리</a>
-                    <a href="./day0113/ex8_이차원배열.html">ex8_이차원배열</a>
-                    <a href="./day0113/ex9_timer.html">ex9_timer</a>
-                    <a href="./day0113/ex10_디지탈시계.html">ex10_디지탈시계</a>
-                    <a href="./day0113/ex11_로또문제.html">ex11_로또문제</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.14</strong>
-            <div>
-                <ul>
-                    <a href="./day0114/ex0_node.html">ex0_node</a>
-                    <a href="./day0114/ex1_photoselect.html">ex1_photoselect</a>
-                    <a href="./day0114/ex2_calendar.html">ex2_calendar</a>
-                    <a href="./day0114/ex3_계산기.html">ex3_계산기</a>
-                    <a href="./day0114/ex4_이미지갯수문제.html">ex4_이미지갯수문제</a>
-                    <a href="./day0114/ex5_book344.html">ex5_book344</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.15</strong>
-            <div>
-                <ul>
-                    <a href="./day0115/ex1_canvas.html">ex1_canvas</a>
-                    <a href="./day0115/ex2_storage.html">ex2_storage</a>
-                    <a href="./day0115/ex3_savestorage.html">ex3_savestorage</a>
-                    <a href="./day0115/ex4_loginsave.html">ex4_loginsave</a>
-                    <a href="./day0115/ex5_slice_splice.html">ex5_slice_splice</a>
-                    <a href="./day0115/ex6_map.html">ex6_map</a>
-                    <a href="./day0115/ex7_jquerystart.html">ex7_jquerystart</a>
-                    <a href="./day0115/ex8_attr연습.html">ex8_attr연습</a>
-                    <a href="./day0115/ex9_text_html.html">ex9_text_html</a>
-                    <a href="./day0115/ex10_jqueryevent.html">ex10_jqueryevent</a>
-                    <a href="./day0115/ex11_jquery문제.html">ex11_jquery문제</a>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <strong>2025.01.16</strong>
-            <div>
-                <ul>
-                    <a href="./day0116/ex1_class.html">ex1_class</a>
-                    <a href="./day0116/ex2_onevent.html">ex2_onevent</a>
-                    <a href="./day0116/ex3_selectevent.html">ex3_selectevent</a>
-                    <a href="./day0116/ex3_selectevent.html">ex3_selectevent</a>
-                    <a href="./day0116/ex4_checkbox.html">ex4_checkbox</a>
-                    <a href="./day0116/ex5_checkbox_copy.html">ex5_checkbox_copy</a>
-                    <a href="./day0116/ex6_offcanvas.html">ex6_offcanvas</a>
-                    <a href="./day0116/ex7_imagemodal.html">ex7_imagemodal</a>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <search-input id="search"></search-input>
+    <div class="grid-container"></div>
+    <script type="module">
+        import { list } from './lib/item-list.js';
+        import { value } from './components/search-input.js';
+
+        $(document).ready(function () {
+            const container = $('.grid-container');
+            const searchBox = $('#search');
+            let searchInput = '';
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchParam = urlParams.get('search');
+            if (searchParam) {
+                searchInput = searchParam;
+            }
+
+            searchBox.on('input', function () {
+                searchInput = value.words.trim();
+                console.log(searchInput);
+                if (searchInput === '') {
+                    container.empty();
+                    list.forEach(entry => {
+                        const gridItem = $('<div>', { class: 'grid-item' });
+                        const strong = $('<strong>').text(entry.date);
+                        const div = $('<div>');
+                        const ul = $('<ul>');
+
+                        entry.items.forEach(item => {
+                            const a = $('<a>', { href: item.link }).text(item.name);
+                            ul.append(a);
+                        });
+
+                        div.append(ul);
+                        gridItem.append(strong, div);
+                        container.append(gridItem);
+                    });
+                    return;
+                }
+
+                const items = list.map(entry => entry.items);
+                const filteredItems = [];
+                list.forEach(listItem => {
+                    const datefiltered = listItem.date.includes(searchInput);
+                    if (datefiltered) filteredItems.push(listItem);
+                    const filtered = listItem.items.filter(item => item.name.includes(searchInput));
+                    if (filtered.length > 0) filteredItems.push({ date: listItem.date, items: filtered });
+                });
+                container.empty();
+                filteredItems.forEach(entry => {
+                    const gridItem = $('<div>', { class: 'grid-item' });
+                    const strong = $('<strong>').text(entry.date);
+                    const div = $('<div>');
+                    const ul = $('<ul>');
+
+                    entry.items.forEach(item => {
+                        const a = $('<a>', { href: item.link }).text(item.name);
+                        ul.append(a);
+                    });
+
+                    div.append(ul);
+                    gridItem.append(strong, div);
+                    container.append(gridItem);
+                });
+            });
+
+            console.log(searchInput);
+            if (searchInput === '') {
+                container.empty();
+                list.forEach(entry => {
+                    const gridItem = $('<div>', { class: 'grid-item' });
+                    const strong = $('<strong>').text(entry.date);
+                    const div = $('<div>');
+                    const ul = $('<ul>');
+
+                    entry.items.forEach(item => {
+                        const a = $('<a>', { href: item.link }).text(item.name);
+                        ul.append(a);
+                    });
+
+                    div.append(ul);
+                    gridItem.append(strong, div);
+                    container.append(gridItem);
+                });
+                return;
+            }
+
+            const items = list.map(entry => entry.items);
+            const filteredItems = [];
+            list.forEach(listItem => {
+                const datefiltered = listItem.date.includes(searchInput);
+                if (datefiltered) filteredItems.push(listItem);
+                const filtered = listItem.items.filter(item => item.name.includes(searchInput));
+                if (filtered.length > 0) filteredItems.push({ date: listItem.date, items: filtered });
+            });
+            container.empty();
+            filteredItems.forEach(entry => {
+                const gridItem = $('<div>', { class: 'grid-item' });
+                const strong = $('<strong>').text(entry.date);
+                const div = $('<div>');
+                const ul = $('<ul>');
+
+                entry.items.forEach(item => {
+                    const a = $('<a>', { href: item.link }).text(item.name);
+                    ul.append(a);
+                });
+
+                div.append(ul);
+                gridItem.append(strong, div);
+                container.append(gridItem);
+            });
+            // container.empty();
+            // list.forEach(entry => {
+            //     const gridItem = $('<div>', { class: 'grid-item' });
+            //     const strong = $('<strong>').text(entry.date);
+            //     const div = $('<div>');
+            //     const ul = $('<ul>');
+
+            //     entry.items.forEach(item => {
+            //         const a = $('<a>', { href: item.link }).text(item.name);
+            //         ul.append(a);
+            //     });
+
+            //     div.append(ul);
+            //     gridItem.append(strong, div);
+            //     container.append(gridItem);
+            // });
+        });
+    </script>
 </body>
 
 </html>

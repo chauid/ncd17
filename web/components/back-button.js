@@ -17,13 +17,13 @@ class BackButton extends HTMLElement {
                 button:hover {
                     background-color: #CCCCCC;
             </style>
-            <button>처음으로</button>
+            <button>뒤로가기</button>
         `;
     }
 
     connectedCallback() {
         this.shadowRoot.querySelector('button').addEventListener('click', () => {
-            window.location.href = '../index.html';
+            window.history.back();
         });
     }
 
