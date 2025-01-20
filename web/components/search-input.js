@@ -1,17 +1,15 @@
-import { list } from '../lib/item-list.js';
-
-let searchValue = { words: '' };
+const searchValue = { words: '' };
 
 class SearchInput extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
             <style>
                 #search {
                     position: fixed;
                     width: 100%;
                     padding: 10px;
+                    font-family: 'Pretendard Variable', sans-serif;
                     font-size: 16px;
                     border: 1px solid #d4d4d4;
                 }
@@ -37,7 +35,7 @@ class SearchInput extends HTMLElement {
             <input type="text" id="search" placeholder="날짜, 이름 검색..." autocomplete="off">
         `;
 
-        this.input = this.shadowRoot.querySelector('#search');
+        this.input = this.querySelector('#search');
 
         this.input.addEventListener('input', this.onInput.bind(this));
     }
@@ -47,7 +45,6 @@ class SearchInput extends HTMLElement {
         const url = new URL(window.location);
         url.searchParams.set('search', searchValue.words);
         window.history.pushState({}, '', url);
-        this.dispatchEvent(new CustomEvent('search', { bubbles: true }));
     }
 }
 

@@ -1,13 +1,13 @@
 export const list = [
     {
-        date: "2024.12.11",
+        date: "2024.12.11 (수)",
         items: [
             { name: "ex1_test", link: "day1211/ex1_test.html" },
             { name: "ex2_hello", link: "day1211/ex2_hello.html" }
         ]
     },
     {
-        date: "2025.01.07",
+        date: "2025.01.07 (화)",
         items: [
             { name: "day0107", link: "./day0107" },
             { name: "ex1_htmltag", link: "./day0107/ex1_htmltag.html" },
@@ -15,7 +15,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.08",
+        date: "2025.01.08 (수)",
         items: [
             { name: "ex1_classstyle", link: "./day0108/ex1_classstyle.html" },
             { name: "ex2_image", link: "./day0108/ex2_image.html" },
@@ -28,11 +28,11 @@ export const list = [
             { name: "ex9_table", link: "./day0108/ex9_table.html" },
             { name: "ex10_table", link: "./day0108/ex10_table.html" },
             { name: "ex11_table", link: "./day0108/ex11_table.html" },
-            { name: "ex12_이력서양식", link: "./day0108/ex12_이력서양식asd.html" }
+            { name: "ex12_이력서양식", link: "./day0108/ex12_이력서양식.html" }
         ]
     },
     {
-        date: "2025.01.09",
+        date: "2025.01.09 (목)",
         items: [
             { name: "ex1_borderstyle", link: "./day0109/ex1_borderstyle.html" },
             { name: "ex2_resize", link: "./day0109/ex2_resize.html" },
@@ -52,7 +52,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.10",
+        date: "2025.01.10 (금)",
         items: [
             { name: "ex1_var_let", link: "./day0110/ex1_var_let.html" },
             { name: "ex2_for", link: "./day0110/ex2_for.html" },
@@ -68,7 +68,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.13",
+        date: "2025.01.13 (월)",
         items: [
             { name: "ex1_querySelector", link: "./day0113/ex1_querySelector.html" },
             { name: "ex2_selectevent", link: "./day0113/ex2_selectevent.html" },
@@ -84,7 +84,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.14",
+        date: "2025.01.14 (화)",
         items: [
             { name: "ex0_node", link: "./day0114/ex0_node.html" },
             { name: "ex1_photoselect", link: "./day0114/ex1_photoselect.html" },
@@ -95,7 +95,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.15",
+        date: "2025.01.15 (수)",
         items: [
             { name: "ex1_canvas", link: "./day0115/ex1_canvas.html" },
             { name: "ex2_storage", link: "./day0115/ex2_storage.html" },
@@ -111,7 +111,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.16",
+        date: "2025.01.16 (목)",
         items: [
             { name: "ex1_class", link: "./day0116/ex1_class.html" },
             { name: "ex2_onevent", link: "./day0116/ex2_onevent.html" },
@@ -124,7 +124,7 @@ export const list = [
         ]
     },
     {
-        date: "2025.01.17",
+        date: "2025.01.17 (금)",
         items: [
             { name: "ex1_nodefind", link: "./day0117/ex1_nodefind.html" },
             { name: "ex2_nodefind", link: "./day0117/ex2_nodefind.html" },
@@ -137,7 +137,21 @@ export const list = [
             { name: "ex9_array_each", link: "./day0117/ex9_array_each.html" },
             { name: "ex10_array_each", link: "./day0117/ex10_array_each.html" },
             { name: "ex11_json_array_each", link: "./day0117/ex11_json_array_each.html" },
-            { name: "ex12_bs_icon", link: "./day0117/ex12_bs_icon.html" },
+            { name: "ex12_bs_icon", link: "./day0117/ex12_bs_icon.html" }
+        ]
+    },
+    {
+        date: "2025.01.20 (월)",
+        items: [
+            { name: "ex1_each복습문제", link: "./day0120/ex1_each복습문제.html" },
+            { name: "ex2_select_val_text", link: "./day0120/ex2_select_val_text.html" },
+            { name: "ex3_animate", link: "./day0120/ex3_animate.html" },
+            { name: "ex4_effect", link: "./day0120/ex4_effect.html" },
+            { name: "ex5_이미지분리", link: "./day0120/ex5_이미지분리.html" },
+            { name: "ex6_벽지변경", link: "./day0120/ex6_벽지변경.html" },
+            { name: "ex7_cdplayer", link: "./day0120/ex7_cdplayer.html" },
+            { name: "ex8_tooltip", link: "./day0120/ex8_tooltip.html" },
+            { name: "ex9_그림판", link: "./day0120/ex9_그림판.html" },
         ]
     }
 ];

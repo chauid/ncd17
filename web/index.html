@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <search-input id="search"></search-input>
+    <!-- <input id="dd" type="text" value="qwer"> -->
+    <search-input></search-input>
     <div class="grid-container"></div>
     <script type="module">
         import { list } from './lib/item-list.js';
@@ -23,15 +24,16 @@
             const searchBox = $('#search');
             let searchInput = '';
 
+
             const urlParams = new URLSearchParams(window.location.search);
             const searchParam = urlParams.get('search');
             if (searchParam) {
                 searchInput = searchParam;
             }
+            searchBox.val(searchInput);
 
             searchBox.on('input', function () {
                 searchInput = value.words.trim();
-                console.log(searchInput);
                 if (searchInput === '') {
                     container.empty();
                     list.forEach(entry => {
@@ -78,7 +80,6 @@
                 });
             });
 
-            console.log(searchInput);
             if (searchInput === '') {
                 container.empty();
                 list.forEach(entry => {
@@ -123,22 +124,6 @@
                 gridItem.append(strong, div);
                 container.append(gridItem);
             });
-            // container.empty();
-            // list.forEach(entry => {
-            //     const gridItem = $('<div>', { class: 'grid-item' });
-            //     const strong = $('<strong>').text(entry.date);
-            //     const div = $('<div>');
-            //     const ul = $('<ul>');
-
-            //     entry.items.forEach(item => {
-            //         const a = $('<a>', { href: item.link }).text(item.name);
-            //         ul.append(a);
-            //     });
-
-            //     div.append(ul);
-            //     gridItem.append(strong, div);
-            //     container.append(gridItem);
-            // });
         });
     </script>
 </body>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../components/back-button.js"></script>
+    <title>502 study</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gaegu&family=Jua&family=Nanum+Pen+Script&family=Playwrite+AU+SA:wght@100..400&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <style>
+        body * {
+            font-family: 'Jua';
+        }
+
+        #can {
+            border: 3px solid black;
+            border-radius: 10px;
+            cursor: crosshair;
+        }
+
+        #mypen {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #mypen>div {
+            width: 25px;
+            height: 25px;
+            border: 1px solid gray;
+            border-radius: 100%;
+            cursor: pointer;
+            float: left;
+            margin: 3px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            let draw = false;//마우스 클릭시 true,true일동안만 그림그리기위한 변수
+            let can = document.getElementById("can");
+            let ctx = can.getContext("2d");
+
+            let preX, preY;//마우스 이동시 직전좌표를 저장할 변수
+            //초기펜 색상
+            ctx.strokeStyle = 'black';
+            //초기펜 굵기
+            ctx.lineWidth = 3;
+            //선의 끝모양-선과선을 이어서 곡선처럼 보이게 하는데 끝부분을
+            //부드럽게 이어져보이게 하는 효과
+            ctx.lineCap = "round";
+
+            $("#can").bind({
+                mousedown: function (e) {
+                    draw = true;
+                    //현재 좌표를 저장
+                    preX = e.pageX;
+                    preY = e.pageY - 125;
+                },
+                mouseup: function (e) {
+                    draw = false;
+                },
+                mousemove: function (e) {
+                    if (draw) {
+                        //선그리기 시작
+                        ctx.beginPath();
+                        //선을 그리기 위한 위치로 이동
+                        ctx.moveTo(preX, preY);
+                        //직전좌표부터 현재좌표까지 선그리기
+                        ctx.lineTo(e.pageX, e.pageY - 125);
+                        //실제 선을 그린다
+                        ctx.stroke();
+                        //선그리기 끝
+                        ctx.closePath();
+
+                        //현재좌표 저장
+                        preX = e.pageX;
+                        preY = e.pageY - 125;
+                    }
+                }
+            });
+
+            $("label[for='range']").text(3 + 'px');
+
+            $("#mypen>div").click(function () {
+                let color = $(this).css("background-color");
+                $("#can").css("border", "3px solid " + color);
+                ctx.strokeStyle = color;
+            });
+
+            $("#range").change(function () {
+                let range = $(this).val();
+                ctx.lineWidth = range;
+                $("label[for='range']").text(range + 'px');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <back-button></back-button>
+    <h4 class="alert alert-danger">HTML5 의 Canvas 를 이용한 간단그림판</h4>
+    <canvas id="can" width="500" height="500"></canvas>
+    <!--색상표-->
+    <div id="mypen">
+        <div style="background-color: orange;"></div>
+        <div style="background-color: #ffb6c1;"></div>
+        <div style="background-color: #90ee90;"></div>
+        <div style="background-color: #00bfff;"></div>
+        <div style="background-color: #228b22;"></div>
+        <div style="background-color: #add8e6;"></div>
+        <div style="background-color: #db7093;"></div>
+        <div style="background-color: #fa8072;"></div>
+        <div style="background-color: #afeeee;"></div>
+        <div style="background-color: #9400d3;"></div>
+        <div style="background-color: #ff7f50;"></div>
+        <div style="background-color: #1e90ff;"></div>
+        <div style="background-color: #7fffd4;"></div>
+        <div style="background-color: #c71585;"></div>
+        <div style="background-color: #40e0d0;"></div>
+        <div style="background-color: #ff6347;"></div>
+    </div>
+    <div>
+        <input type="range" id="range" min="1" max="20" value="3">
+        <label for="range"></label>
+    </div>
+</body>
+
+</html>
