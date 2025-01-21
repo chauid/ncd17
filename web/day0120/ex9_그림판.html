@@ -127,6 +127,26 @@
         <input type="range" id="range" min="1" max="20" value="3">
         <label for="range"></label>
     </div>
+    <button type="button" id="btn1">화면 초기화</button>
+    <button type="button" id="btn2">지우개</button>
+    <button type="button" id="btn3">별도보관</button>
+    <hr class="save">
+    <script>
+        $(document).ready(function () {
+            let ctx = can.getContext("2d");
+            $("#btn1").click(function () {
+                ctx.clearRect(0, 0, 500, 500);
+            });
+            $("#btn2").click(function () {
+                //선색을 흰색으로
+                ctx.strokeStyle = "#fff";
+            });
+            $("#btn3").click(function () {
+                let myimg = `<img src="${can.toDataURL()}">`;
+                $("hr.save").after(myimg);
+            });
+        });
+    </script>
 </body>
 
 </html>

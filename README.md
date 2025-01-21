@@ -29,7 +29,9 @@
 |2025.01.03|[day0103](./sql/day0103/), [day0103](./java/workspace/classProject/day0103/), [day0103db](./java/workspace/classProject/day0103db/)|MySQL, JDBC|
 |2025.01.06|[day0106](./java/workspace/classProject/day0106/), [day0106db](./java/workspace/classProject/day0106db/)|JDBC, JTable|
 |2025.01.07|[day0107db](./java/workspace/classProject/day0107db/), [day0107](./web/day0107/)|JDBC, JTable, Web|
-|2025.01.08&#126; 2025.01.20|[web](./web/)|HTML, CSS, JS, jQuery|
+|2025.01.08&#126; 2025.01.21|[web](./web/)|HTML, CSS, JS, jQuery|
+|2025.01.21|[day0121](./java/workspace/webProject/)|Servlet, JSP|
+
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  

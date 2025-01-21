@@ -153,5 +153,12 @@ export const list = [
             { name: "ex8_tooltip", link: "./day0120/ex8_tooltip.html" },
             { name: "ex9_그림판", link: "./day0120/ex9_그림판.html" },
         ]
+    },
+    {
+        date: "2025.01.21 (월)",
+        items: [
+            { name: "ex1_gungame", link: "./day0121/ex1_gungame.html" },
+            { name: "ex2_가로메뉴", link: "./day0121/ex2_가로메뉴.html" },
+        ]
     }
 ];
