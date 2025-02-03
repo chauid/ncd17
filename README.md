@@ -30,7 +30,7 @@
 |2025.01.06|[day0106](./java/workspace/classProject/day0106/), [day0106db](./java/workspace/classProject/day0106db/)|JDBC, JTable|
 |2025.01.07|[day0107db](./java/workspace/classProject/day0107db/), [day0107](./web/day0107/)|JDBC, JTable, Web|
 |2025.01.08&#126; 2025.01.21|[web](./web/)|HTML, CSS, JS, jQuery|
-|2025.01.21&#126; 2025.01.23|[JSP](./java/workspace/webProject/)|Servlet, JSP|
+|2025.01.21&#126; 2025.02.03|[JSP](./java/workspace/webProject/)|Servlet, JSP|
 
 
 #### **Spring**  
