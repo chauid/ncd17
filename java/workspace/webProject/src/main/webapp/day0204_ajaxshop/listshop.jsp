@@ -1,21 +1,31 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="org.json.simple.JSONObject"%>
+<%@page import="org.json.simple.JSONArray"%>
+<%@page import="shop.data.ShopDto"%>
+<%@page import="java.util.List"%>
+<%@page import="shop.data.ShopDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>502 jsp study</title>
-	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gaegu&family=Jua&family=Nanum+Pen+Script&family=Playwrite+AU+SA:wght@100..400&family=Single+Day&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-    <style>
-        body *{
-            font-family: 'Jua';
-        }
-     </style>
-</head>
-<body>
-
-</body>
-</html>
+<%
+	int order=Integer.parseInt(request.getParameter("order"));
+	ShopDao dao=new ShopDao();
+	List<ShopDto> list=dao.getAllSangpums(order);
+	
+	JSONArray arr=new JSONArray();
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	for(ShopDto dto:list)
+	{
+		JSONObject ob=new JSONObject();
+		ob.put("num",dto.getNum());
+		ob.put("sangpum",dto.getSangpum());
+		ob.put("scolor",dto.getScolor());
+		ob.put("scnt",dto.getScnt());
+		ob.put("sprice",dto.getSprice());
+		ob.put("sphoto",dto.getSphoto());
+		ob.put("ipgoday",dto.getIpgoday());
+		ob.put("writeday",sdf.format(dto.getWriteday()));		
+		
+		arr.add(ob);
+	}
+%>
+<%=arr%>

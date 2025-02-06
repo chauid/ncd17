@@ -7,3 +7,11 @@ create table shop (
     sphoto varchar(50),
     ipgoday varchar(20),
     writeday datetime);
+    
+create table shopreple(
+    idx smallint auto_increment primary key,
+    num smallint,
+    star smallint,
+    message varchar(300),
+    writeday datetime,
+    foreign key(num) references shop(num) on delete cascade);
