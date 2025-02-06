@@ -28,7 +28,11 @@ public class HelloServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String name = "hangul";
-		response.getWriter().append("Served ats: ").append(request.getContextPath()).append(name);
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().write("{\"name\":\"" + name + "\"}");
+		
+//		response.getWriter().append("Served ats: ").append(request.getContextPath()).append(name);
 	}
 
 	/**
