@@ -30,14 +30,15 @@
 |2025.01.06|[day0106](./java/workspace/classProject/day0106/), [day0106db](./java/workspace/classProject/day0106db/)|JDBC, JTable|
 |2025.01.07|[day0107db](./java/workspace/classProject/day0107db/), [day0107](./web/day0107/)|JDBC, JTable, Web|
 |2025.01.08&#126; 2025.01.21|[web](./web/)|HTML, CSS, JS, jQuery|
-|2025.01.21&#126; 2025.02.06|[JSP](./java/workspace/webProject/)|Servlet, JSP|
+|2025.01.21&#126; 2025.02.07|[JSP](./java/workspace/webProject/)|Servlet, JSP|
+|2025.02.10&#126; 2025.02.13|[JSTL](./java/workspace/ServletProject/)|Servlet JSTL|
 
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
 > IDE: Eclipse
 
-### 9&#126;11주차
+### 9&#126;11주차()
 #### **React**  
 > [프로젝트 폴더](./react/)  
 > IDE: vscode

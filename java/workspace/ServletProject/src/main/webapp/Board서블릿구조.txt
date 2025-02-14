@@ -1,0 +1,5 @@
+
+BoardListServet (매핑:/board/list ) ---(포워드)--- boardlist.jsp
+BoardFormServlet(/board/writeform) ----(포워드)--writeform.jsp
+BoardInsertServlet(/shop/insert)----(리다이렉트)---/board/list
+BoardDetailServlet(/board/detail)----(포워드)--- content.jsp

@@ -9,9 +9,9 @@ import java.sql.SQLException;
 public class MysqlConnect {
 	static final String MYSQL_DRIVER="org.mariadb.jdbc.Driver";
 //    String url="jdbc:mariadb://localhost:3306/test";
-    String url="jdbc:mysql://[host]:[port]/[db]?serverTimezone=Asia/Seoul";
-    String username="[user]";
-    String password="[password]";
+    String url="jdbc:mysql://db-324nge-kr.vpc-pub-cdb.ntruss.com:3306/studydb?serverTimezone=Asia/Seoul";
+    String username="administrator";
+    String password="administrator!9df6b";
     
     public MysqlConnect() {
 		// TODO Auto-generated constructor stub

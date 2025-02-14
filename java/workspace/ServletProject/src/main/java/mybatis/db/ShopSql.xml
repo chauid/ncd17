@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shop.data.ShopDao">
+	<select id="totalCount" resultType="int">
+		select count(*) from shop
+	</select>
+	<select id="selectAllList" resultType="ShopDto">
+		select * from shop order by num
+	</select>
+	<insert id="insertShop" parameterType="ShopDto">
+		insert into shop (sangpum,scolor,scnt,sprice,sphoto,ipgoday,writeday)
+		values (#{sangpum},#{scolor},#{scnt},#{sprice},#{sphoto},#{ipgoday},now())
+	</insert>
+	<select id="selectOneByNum" parameterType="int" resultType="ShopDto">
+		select * from shop where num=#{num}
+	</select>
+	<update id="updateShop" parameterType="ShopDto">
+		update shop set sangpum=#{sangpum},scolor=#{scolor},scnt=#{scnt},
+		sprice=#{sprice},sphoto=#{sphoto},ipgoday=#{ipgoday} where num=#{num}
+	</update>
+	<delete id="deleteShop" parameterType="int">
+		delete from shop where num=#{num}
+	</delete>
+</mapper>

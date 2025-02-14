@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="reboard.data.BoardDao">
+	<select id="getMaxNum" resultType="int">
+		select ifnull(max(num),0) from reboard
+	</select>
+	<select id="totalCount" resultType="int">
+		select count(*) from reboard
+	</select>
+	<select id="selectPagingList" parameterType="Map" resultType="BoardDto">
+		select * from reboard order by regroup desc,restep asc limit #{start},#{perpage}
+	</select>
+	<update id="updateRestep" parameterType="Map">
+		update reboard set restep=restep+1 where regroup=#{regroup} and restep &gt; #{restep}
+	</update>
+	<insert id="insertBoard" parameterType="BoardDto">
+		insert into reboard (writer,photo,passwd,subject,content,writeday,regroup,relevel,restep)
+		values (#{writer},#{photo},#{passwd},#{subject},#{content},now(),#{regroup},#{relevel},#{restep})
+	</insert>
+	<update id="updateReadCount" parameterType="int">
+		update reboard set readcount=readcount+1 where num=#{num}
+	</update>
+	<select id="selectOneByNum" parameterType="int" resultType="BoardDto">
+		select *  from reboard where num=#{num}
+	</select>
+	<select id="checkPass" parameterType="Map" resultType="int">
+		select count(*) from reboard where num=#{num} and passwd=#{passwd}
+	</select>
+	<delete id="deleteBoard" parameterType="int">
+		delete from reboard where num=#{num}
+	</delete>
+	<update id="updateBoard" parameterType="BoardDto">
+		update reboard set subject=#{subject},content=#{content} where num=#{num}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
