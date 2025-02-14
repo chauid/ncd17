@@ -36,7 +36,11 @@
 
 #### **Spring**  
 > [프로젝트 폴더](./spring/)  
-> IDE: Eclipse
+> IDE: Eclipse, Spring Suite Tool
+
+|날짜|내용|
+|---|---|
+|2025.02.14|forwarding, redirect|
 
 ### 9&#126;11주차()
 #### **React**  
