@@ -41,6 +41,7 @@
 |날짜|내용|
 |---|---|
 |2025.02.14|forwarding, redirect|
+|2025.02.17|POST 데이터 읽기, DTO Model로 가져오기\([프로젝트2](./spring/SpringMvc2/)\)|
 
 ### 9&#126;11주차()
 #### **React**  
