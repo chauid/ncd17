@@ -37,7 +37,76 @@
         	border: 1px solid black;
         	border-radius: 100px;
         }
+        
+        #photoupload{
+        	display: none;
+        }
+        
+        .addphoto{
+        	font-size: 1.5em;
+        	cursor: pointer; 
+        	margin-left: 10px;   
+        	margin-right: 10px;       	
+        }
+        
+        .replelist{
+        	margin: 10px 10px;
+        }
      </style>
+     <script type="text/javascript">     	
+     	let file;
+     	$(function(){
+     		replelist();//처음 로딩시 댓글 출력
+     		
+     		//카메라 아이콘 이벤트
+     		$(".addphoto").click(function(){
+     			$("#photoupload").trigger("click");
+     		});
+     		//파일 업로드 이벤트
+     		$("#photoupload").change(function(e){
+     			file=e.target.files[0];
+     			console.log(file);
+     		});
+     		//댓글 등록버튼 이벤트
+     		$("#btnaddreple").click(function(){     			
+     			let m=$("#message").val();
+     			if(m==''){
+     				alert("댓글을 입력해주세요");
+     				return;
+     			}
+     			
+     			if(file==null){
+     				alert("사진을 선택해주세요");
+     				return;
+     			}
+     			let form=new FormData();
+     			console.log(file);
+     			form.append("upload",file);
+     			form.append("message",m);
+     			form.append("num",${dto.num});
+     			
+     			$.ajax({
+     				type:"post",
+     				dataType:"text",
+     				url:"./addreple",
+     				data:form,
+     				processData:false,
+     				contentType:false,
+     				success:function(){
+     					$("#message").val("");
+     					file=null;
+     					replelist();
+     				}
+     			});
+     		});
+     		
+     	});
+     	
+     	function replelist()
+     	{
+     		
+     	}
+     </script>
 </head>
 <body>
 <div style="margin: 20px;width: 500px;">
@@ -55,7 +124,8 @@
 				</c:forTokens>
 			</td>
 			<td>
-				<img src="../save/${dto.mainPhoto}" class="large">
+				<img src="../save/${dto.mainPhoto}" class="large"
+				onerror="this.src='../save/noimage.png'">
 			</td>
 		</tr>
 		<tr>
@@ -73,6 +143,21 @@
 			</td>		
 		</tr>
 		<tr>
+			<td colspan="2">
+				<div class="repleform input-group" style="width: 600px;">
+				  	<input type="text" id="message" class="form-control"
+				  	style="width: 400px;" placeholder="댓글입력">
+				  	
+				  	<input type="file" id="photoupload">
+				  	<i class="bi bi-camera-fill addphoto"></i>
+				  	<button type="button" class="btn btn-sm btn-info" id="btnaddreple">등록</button>
+				</div>
+				<div class="replelist">
+				
+				</div>
+			</td>
+		</tr>
+		<tr>
 			<td colspan="2" align="center">
 				<button type="button" class="btn btn-sm btn-outline-secondary"
 				style="width: 90px;"
@@ -88,7 +173,23 @@
 				
 				<button type="button" class="btn btn-sm btn-outline-secondary"
 				style="width: 90px;"
-				onclick="">삭제</button>
+				onclick="sangdel(${dto.num})">삭제</button>
+				
+				<script type="text/javascript">
+					function sangdel(num)
+					{
+						//alert(num);
+						let ans=confirm("해당 게시물을 삭제하려면 [확인]을 눌러주세요");
+						if(ans){
+							location.href="./delete?num="+num;
+						}
+					}
+				</script>
+				
+				<button type="button" class="btn btn-sm btn-outline-secondary"
+				style="width: 90px;"
+				onclick="location.href='photos?num=${dto.num}'">사진수정</button>
+				
 			</td>
 		</tr>
 	</table>

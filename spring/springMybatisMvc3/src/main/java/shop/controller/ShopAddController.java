@@ -63,7 +63,11 @@ public class ShopAddController {
 		//db insert
 		shopService.insertShop(dto);
 		
-		return "redirect:./list";
+		//insert 후 num값을 얻는 sql문 추가후 상세보기 페이지로 이동할수 있다
+		System.out.println("num="+dto.getNum());
+		
+		//return "redirect:./list";
+		return "redirect:./detail?num="+dto.getNum();
 	}
 	
 

@@ -40,6 +40,7 @@
      </style>
 </head>
 <body>
+
 <div style="margin: 20px;width:500px;">
 	<h5 class="alert alert-danger">총 ${totalCount}개의 상품이 있습니다
 		<button type="button" class="btn btn-success btn-sm"
@@ -52,7 +53,8 @@
 		<c:forEach var="dto" items="${list}">
 			<figure>
 			   <a href="./detail?num=${dto.num}">
-				<img src="../save/${dto.mainPhoto}">
+				<img src="../save/${dto.mainPhoto}"
+				  onerror="this.src='../save/noimage.png'">
 			   </a>
 			   <figcaption>
 			   		<h6>${dto.sangpum}</h6>
