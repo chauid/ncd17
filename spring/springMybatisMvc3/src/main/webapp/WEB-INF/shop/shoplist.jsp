@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body *{
             font-family: 'Jua';
@@ -40,6 +41,7 @@
      </style>
 </head>
 <body>
+<jsp:include page="../../layout/title.jsp"/>
 
 <div style="margin: 20px;width:500px;">
 	<h5 class="alert alert-danger">총 ${totalCount}개의 상품이 있습니다
@@ -51,18 +53,22 @@
 
 <div style="margin: 20px;" class="shopbox">
 		<c:forEach var="dto" items="${list}">
-			<figure>
-			   <a href="./detail?num=${dto.num}">
-				<img src="../save/${dto.mainPhoto}"
-				  onerror="this.src='../save/noimage.png'">
-			   </a>
-			   <figcaption>
-			   		<h6>${dto.sangpum}</h6>
-			   		<h6>
-			   			<fmt:formatNumber value="${dto.sprice}" type="number"/>원
-			   		</h6>
-			   </figcaption>
-			</figure>
+		 	<a href="./detail?num=${dto.num}" style="color:black;">
+				<figure>				  
+					<img src="../save/${dto.mainPhoto}"
+					  onerror="this.src='../save/noimage.png'">
+				   
+				   <figcaption>
+				   		<h6>
+				   		<c:if test="${dto.replecount>0}">
+				   			<span class="badge bg-danger">${dto.replecount}</span>
+				   		</c:if>${dto.sangpum}</h6>
+				   		<h6>
+				   			<fmt:formatNumber value="${dto.sprice}" type="number"/>원
+				   		</h6>
+				   </figcaption>
+				</figure>
+			</a>
 		</c:forEach>
 	</div>
 </body>

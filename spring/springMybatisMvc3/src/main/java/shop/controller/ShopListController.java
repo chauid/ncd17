@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import data.dto.ShopDto;
+import data.dto.ShopRepleDto;
+import data.service.ShopRepleService;
 import data.service.ShopService;
 
 @Controller
@@ -15,6 +17,9 @@ public class ShopListController {
 
 	@Autowired
 	ShopService shopService;
+	
+	@Autowired
+	ShopRepleService repleService;
 	
 	@GetMapping("/shop/list")
 	public String shopList(Model model)
@@ -26,8 +31,13 @@ public class ShopListController {
 		//메인 사진 등록
 		for(int i=0;i<list.size();i++)
 		{
-			String mainPhoto=list.get(i).getSphoto().split(",")[0];
-			list.get(i).setMainPhoto(mainPhoto);
+			ShopDto dto=list.get(i);
+			String mainPhoto=dto.getSphoto().split(",")[0];
+			dto.setMainPhoto(mainPhoto);
+			
+			//댓글수 저장
+			int replecount=repleService.getRepleByNum(dto.getNum()).size();
+			dto.setReplecount(replecount);
 		}
 		//모델에 저장
 		model.addAttribute("totalCount", totalCount);

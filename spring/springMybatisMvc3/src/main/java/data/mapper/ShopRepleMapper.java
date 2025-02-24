@@ -11,5 +11,7 @@ public interface ShopRepleMapper {
 	public void insertShopReple(ShopRepleDto dto);
 	public void deleteShopReple(int idx);
 	public List<ShopRepleDto> getRepleByNum(int num);
-
+	public String getPhoto(int idx);
+	public void updateLikes(int idx);
+	public int getLikes(int idx);
 }

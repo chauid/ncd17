@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body *{
             font-family: 'Jua';
@@ -52,6 +53,39 @@
         .replelist{
         	margin: 10px 10px;
         }
+        
+        img.mini{
+        	width:30px;
+        	height: 30px;
+        	border: 1px solid gray;
+        	margin-right: 10px;
+        	cursor: pointer;
+        }
+        
+        span.day{
+        	color: #bbb;
+        	font-size: 0.9em;
+        	margin-left: 20px;
+        	margin-right: 20px;
+        }
+        
+        .likesicon{
+        	font-size: 18px;
+        	cursor: pointer;
+        	color: red;
+        }
+        
+        span.chu{
+        	color:#999;
+        	font-size: 0.9em;
+        }
+        
+        .repledel{
+        	color: red;
+        	cursor: pointer;
+        	font-size: 0.9em;
+        	margin-left: 10px;
+        }
      </style>
      <script type="text/javascript">     	
      	let file;
@@ -85,6 +119,7 @@
      			form.append("message",m);
      			form.append("num",${dto.num});
      			
+     			
      			$.ajax({
      				type:"post",
      				dataType:"text",
@@ -100,15 +135,111 @@
      			});
      		});
      		
+     		
+     		//미니 댓글 사진 클릭시 원본사진 보기
+     		$(document).on("click","img.mini",function(){
+     			let imgSrc=$(this).attr("src");
+     			$("img.replelarge").attr("src",imgSrc);
+     		});
+     		
+     		//댓글 삭제
+     		$(document).on("click",".repledel",function(){
+     			let idx=$(this).attr("idx");
+     			let ans=confirm("해당 댓글을 삭제할까요?");
+     			if(!ans) return;//취소 클릭시 함수 종료
+     			
+     			$.ajax({
+     				type:"get",
+     				dataType:"text",
+     				data:{"idx":idx},
+     				url:"./repledel",
+     				success:function(){
+     					//댓글 삭제후 전체 댓글 다시 출력
+     					replelist();
+     				}
+     			});
+     		});
+     		
+     		//추천아이콘 클릭시 추천수 증가
+     		$(document).on("click",".likesicon",function(){
+     			let idx=$(this).attr("idx");
+     			let icon=$(this);
+     			$.ajax({
+     				type:"get",
+     				dataType:"json",
+     				data:{"idx":idx},
+     				url:"./likes",
+     				success:function(res){
+     					//alert(res.likes);
+     					icon.next().find(".likes").text(res.likes);
+     				}
+     			});
+     		});
      	});
      	
      	function replelist()
      	{
-     		
+     		$.ajax({
+     			type:"get",
+     			dataType:"json",
+     			url:"./replelist",
+     			data:{"num":${dto.num}},
+     			success:function(res){
+     				let s="";
+     				
+     				$.each(res,function(idx,item){
+     					s+=`
+     					 <div class="item" style="margin-bottom:5px;">
+     							<img src="../save/\${item.photo}" class="mini"
+     								data-bs-toggle="modal" data-bs-target="#myMiniPhotoModal">
+     							\${item.message}
+     							<span class="day">\${item.writetime}</span>
+     							<span style:"float:right;">
+     								<i class="bi bi-hand-thumbs-up likesicon" idx="\${item.idx}"></i>
+     									<span class="chu">추천 <span class="likes">\${item.likes}</span></span>
+     								<i class="bi bi-x-lg repledel" idx="\${item.idx}"></i>
+     							</span>
+     					</div>		
+     					
+     					`;
+     					
+     				});
+     				
+     				s+="</div>";
+     				$("div.replelist").html(s);
+     			}
+     		});
      	}
      </script>
 </head>
 <body>
+<jsp:include page="../../layout/title.jsp"/>
+<!-- The Modal -->
+<div class="modal" id="myMiniPhotoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">원본사진</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <img src="" class="replelarge" style="width: 100%;">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <div style="margin: 20px;width: 500px;">
 	<table>
 		<tr>

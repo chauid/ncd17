@@ -18,4 +18,5 @@ public class ShopDto {
 	private String ipgoday;
 	private Timestamp writeday;	
 	private String mainPhoto;
+	private int replecount;//댓글 갯수저장
 }
