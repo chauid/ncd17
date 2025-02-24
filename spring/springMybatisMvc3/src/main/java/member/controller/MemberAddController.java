@@ -1,7 +1,10 @@
 package member.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,7 +57,27 @@ public class MemberAddController {
 		//사진선택을 안했다면 upload하지말고 mphoto 에 "no" 저장
 		System.out.println("filename:"+upload.getOriginalFilename());
 		
-		return "redirect:/";//일단은 홈으로 이동
+		if(upload.getOriginalFilename().equals("")) {
+			dto.setMphoto("no");
+		}else {
+			//업로드할 폴더명
+			String uploadFolder=request.getSession().getServletContext().getRealPath("save");
+			//업로드할 파일명
+			String uploadFilename=UUID.randomUUID()+"."+upload.getOriginalFilename().split("\\.")[1];
+			//업로드
+			try {
+				upload.transferTo(new File(uploadFolder+"/"+uploadFilename));
+				dto.setMphoto(uploadFilename);
+			} catch (IllegalStateException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		memberService.insertMember(dto);
+		
+		return "redirect:../";//일단은 홈으로 이동
 	}
 }
 
