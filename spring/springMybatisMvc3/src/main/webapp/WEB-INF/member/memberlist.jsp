@@ -47,7 +47,7 @@
 				<tr>
 					<td>
 						<input type="checkbox" class="numchk" num="${dto.num}">
-						<img src="../save/${dto.mphoto}" class="small"
+						<img src="${dto.mphoto}" class="small"
 						onerror="this.src='../save/noimage.png'">
 						${dto.mname}
 					</td>

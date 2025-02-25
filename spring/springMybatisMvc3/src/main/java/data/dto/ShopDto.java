@@ -16,7 +16,7 @@ public class ShopDto {
 	private int scnt;
 	private String sphoto;
 	private String ipgoday;
-	private Timestamp writeday;	
+	private Timestamp writeday;
 	private String mainPhoto;
-	private int replecount;//댓글 갯수저장
+	private int replecount;// 댓글 갯수저장
 }

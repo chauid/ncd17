@@ -16,6 +16,6 @@ public class ShopRepleDto {
 	private int likes;
 	private String message;
 	private String photo;
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm",timezone = "Asia/Seoul")
-	private Timestamp writetime;	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
+	private Timestamp writetime;
 }

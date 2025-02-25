@@ -16,12 +16,17 @@ import data.service.MemberService;
 public class MemberListController {
 	@Autowired
 	MemberService memberService;
-	
+
 	@GetMapping("/list")
-	public String memberList(Model model)
-	{
-		List<MemberDto> list=memberService.getAllMembers();
-		model.addAttribute("list",list);
+	public String memberList(Model model) {
+		List<MemberDto> list = memberService.getAllMembers();
+		for (MemberDto dto : list) {
+			if (dto.getMphoto() != null) {
+				dto.setMphoto("https://s8iggryl8725.edge.naverncp.com/Jy5pSYRAWb/member/" + dto.getMphoto()
+						+ "?type=f&w=30&h=30&faceopt=true&ttype=jpg");
+			}
+		}
+		model.addAttribute("list", list);
 		return "member/memberlist";
 	}
 

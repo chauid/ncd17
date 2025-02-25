@@ -15,76 +15,33 @@ import jakarta.servlet.http.HttpSession;
 public class LoginController {
 	@Autowired
 	MemberService memberService;
-	
+
 	@GetMapping("/member/login")
-	public Map<String, String> login(
-			@RequestParam String loginid,@RequestParam String loginpass,
-			HttpSession session
-			)
-	{
-		Map<String, String> map=new HashMap<>();
-		boolean b=memberService.loginCheck(loginid, loginpass);
-		//아이디와 비번이 맞을경우 세션저장
-		if(b) {
-			session.setMaxInactiveInterval(60*60*4);//4시간유지
+	public Map<String, String> login(@RequestParam String loginid, @RequestParam String loginpass,
+			HttpSession session) {
+		Map<String, String> map = new HashMap<>();
+		boolean b = memberService.loginCheck(loginid, loginpass);
+		// 아이디와 비번이 맞을경우 세션저장
+		if (b) {
+			session.setMaxInactiveInterval(60 * 60 * 4);// 4시간유지
 			session.setAttribute("loginstatus", "success");
 			session.setAttribute("loginid", loginid);
-			
-			//아이디에 해당하는 프로필 사진 얻기
-			String photo=memberService.getSelectByMyid(loginid).getMphoto();
-			session.setAttribute("loginphoto", photo);
+
+			// 아이디에 해당하는 프로필 사진 얻기
+			String photo = memberService.getSelectByMyid(loginid).getMphoto();
+			session.setAttribute("loginphoto", "https://s8iggryl8725.edge.naverncp.com/Jy5pSYRAWb/member/" + photo
+					+ "?type=f&w=30&h=30&faceopt=true&ttype=jpg");
 		}
-		
-		map.put("result", b?"success":"fail");
-		
+
+		map.put("result", b ? "success" : "fail");
+
 		return map;
 	}
-	
+
 	@GetMapping("/member/logout")
-	public void memberLogout(HttpSession session)
-	{
+	public void memberLogout(HttpSession session) {
 		session.removeAttribute("loginstatus");
 		session.removeAttribute("loginid");
 		session.removeAttribute("loginphoto");
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

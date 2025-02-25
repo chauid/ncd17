@@ -14,60 +14,36 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ShopService {
 	ShopMapper shopMapper;
-	
-	public int getTotalCount()
-	{
+
+	public int getTotalCount() {
 		return shopMapper.getTotalCount();
 	}
-	
-	public void insertShop(ShopDto dto)
-	{
+
+	public void insertShop(ShopDto dto) {
 		shopMapper.insertShop(dto);
 	}
-	
-	public List<ShopDto> getAllSangpum()
-	{
+
+	public List<ShopDto> getAllSangpum() {
 		return shopMapper.getAllSangpum();
 	}
-	public ShopDto getSelectOne(int num)
-	{
+
+	public ShopDto getSelectOne(int num) {
 		return shopMapper.getSelectOne(num);
 	}
-	public void updateShop(ShopDto dto)
-	{
+
+	public void updateShop(ShopDto dto) {
 		shopMapper.updateShop(dto);
 	}
-	
-	public void deleteShop(int num)
-	{
+
+	public void deleteShop(int num) {
 		shopMapper.deleteShop(num);
 	}
-	
-	public void updatePhoto(int num,String photo)
-	{
-		Map<String, Object> map=new HashMap<>();
+
+	public void updatePhoto(int num, String photo) {
+		Map<String, Object> map = new HashMap<>();
 		map.put("num", num);
 		map.put("photo", photo);
-		shopMapper.updatePhoto(map);		
+		shopMapper.updatePhoto(map);
 	}
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

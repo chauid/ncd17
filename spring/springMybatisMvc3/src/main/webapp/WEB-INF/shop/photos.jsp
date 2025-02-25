@@ -54,7 +54,7 @@
 	</h4>
 	<div class="photos">
 		<c:forTokens var="onephoto" items="${sphoto}" delims=",">
-			<img src="../save/${onephoto}">
+			<img src="https://s8iggryl8725.edge.naverncp.com/Jy5pSYRAWb/shop/${onephoto}?type=f&w=100&h=120&faceopt=true&ttype=jpg">
 			<i class="bi bi-x-circle photodel" pname="${onephoto}"></i>
 		</c:forTokens>
 	</div>

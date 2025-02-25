@@ -125,7 +125,7 @@
 		<br>
 		<span style="margin-left:300px;font-size: 15px;">
 			<c:if test="${sessionScope.loginstatus!=null}">
-				<img src="${root}/save/${sessionScope.loginphoto}" class="profilephoto"
+				<img src="${sessionScope.loginphoto}" class="profilephoto"
 				onerror="this.src='${root}/save/noimage.png'">
 				<script>
 					$(".profilephoto").click(function(){
@@ -141,6 +141,9 @@
 	<ul class="mymenu">
 		<li>
 			<a href="${root}/">Home</a>
+		</li>
+		<li>
+			<a href="${root}/papago">Papago</a>
 		</li>
 		<li>
 			<a href="${root}/shop/list">상품목록</a>

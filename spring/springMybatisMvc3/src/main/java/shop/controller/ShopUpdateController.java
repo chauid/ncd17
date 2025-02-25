@@ -13,23 +13,22 @@ import data.service.ShopService;
 
 @Controller
 public class ShopUpdateController {
-	
+
 	@Autowired
 	ShopService shopService;
-	
+
 	@GetMapping("/shop/updateform")
-	public String updateForm(@RequestParam int num,Model model)
-	{
-		ShopDto dto=shopService.getSelectOne(num);
-		
+	public String updateForm(@RequestParam int num, Model model) {
+		ShopDto dto = shopService.getSelectOne(num);
+		dto.setSphoto("https://kr.object.ncloudstorage.com/bitcamp-bucket-springmvc3/shop/" + dto.getSphoto());
+
 		model.addAttribute("dto", dto);
 		return "shop/updateform";
 	}
-	
+
 	@PostMapping("/shop/update")
-	public String update(@ModelAttribute ShopDto dto)
-	{
+	public String update(@ModelAttribute ShopDto dto) {
 		shopService.updateShop(dto);
-		return "redirect:./detail?num="+dto.getNum();
+		return "redirect:./detail?num=" + dto.getNum();
 	}
 }
