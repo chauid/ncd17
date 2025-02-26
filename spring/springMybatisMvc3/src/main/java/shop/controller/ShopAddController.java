@@ -23,8 +23,6 @@ public class ShopAddController {
 	@Autowired
 	ShopService shopService;
 
-	private static final String bucketName = "bitcamp-bucket-springmvc3";
-
 	@Autowired
 	NcpObjectStorageService storageService;
 	
@@ -44,7 +42,7 @@ public class ShopAddController {
 		for (MultipartFile upload : uploadList) {
 			// 파일명을 랜덤값.확장자 형식으로 만들기
 //			String uploadFilename = UUID.randomUUID() + "." + (upload.getOriginalFilename().split("\\.")[1]);
-			String uploadFileName = storageService.uploadFile(bucketName, "shop", upload);
+			String uploadFileName = storageService.uploadFile(NcpObjectStorageService.getBucketname(), "shop", upload);
 			sphoto += uploadFileName + ",";
 
 //			 업로드

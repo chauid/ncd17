@@ -18,10 +18,12 @@
      </style>
 </head>
 <body>
-<jsp:include page="/layout/title.jsp" />
-<div style="margin:30px 100px;width:500px;">
-	<img src="./s6.JPG">
-	<h1  class="alert alert-danger">메인 페이지입니다</h1>
-</div>
+<!--로그인을 안할경우 경고후 이전페이지로 이동 -->
+<c:if test="${sessionScope.loginstatus==null}">
+	<script>
+		alert("회원게시판입니다\n먼저 로그인을 해주세요");
+		history.back();
+	</script>
+</c:if>
 </body>
 </html>

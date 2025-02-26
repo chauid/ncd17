@@ -1,7 +1,5 @@
 package shop.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,7 +22,7 @@ public class ShopDetailDeleteController {
 	@Autowired
 	ShopService shopService;
 
-	private static final String bucketName = "bitcamp-bucket-springmvc3";
+//	private static final String bucketName = "bitcamp-bucket-springmvc3";
 
 	@Autowired
 	NcpObjectStorageService storageService;
@@ -51,7 +49,7 @@ public class ShopDetailDeleteController {
 		// 실제 경로에서 파일을 찾아서 삭제
 		for (String f : photo) {
 //			File file = new File(uploadFolder + "/" + f);
-			storageService.deleteFile(bucketName, "shop", f);
+			storageService.deleteFile(NcpObjectStorageService.getBucketname(), "shop", f);
 			// save 폴더에 파일이 존재할경우 삭제
 //			if (file.exists())
 //				file.delete();
@@ -78,7 +76,7 @@ public class ShopDetailDeleteController {
 		// 업로드 경로 구하기
 		String uploadFolder = request.getSession().getServletContext().getRealPath("/save");
 		// 스토리지의 사진도 삭제
-		storageService.deleteFile(bucketName, "shop", pname);
+		storageService.deleteFile(NcpObjectStorageService.getBucketname(), "shop", pname);
 //		File file = new File(uploadFolder + "/" + pname);
 //		if (file.exists())
 //			file.delete();
@@ -109,7 +107,7 @@ public class ShopDetailDeleteController {
 			String uploadFilename = UUID.randomUUID() + "." + f.getOriginalFilename().split("\\.")[1];
 			photos += uploadFilename + ",";
 			// 업로드
-			storageService.uploadFile(bucketName, "shop", f);
+			storageService.uploadFile(NcpObjectStorageService.getBucketname(), "shop", f);
 //			try {
 //				f.transferTo(new File(uploadFolder + "/" + uploadFilename));
 //			} catch (IllegalStateException | IOException e) {

@@ -76,7 +76,7 @@
      </script>
 </head>
 <body>
-<jsp:include page="../../layout/title.jsp"/>
+<jsp:include page="/layout/title.jsp" />
 <div style="margin: 10px 30px;width: 500px;">
 	<form action="./insert" method="post" enctype="multipart/form-data"
 	onsubmit="return check()">

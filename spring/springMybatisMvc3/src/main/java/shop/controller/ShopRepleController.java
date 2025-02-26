@@ -25,8 +25,6 @@ public class ShopRepleController {
 	@Autowired
 	ShopRepleService repleService;
 	
-	private static final String bucketName = "bitcamp-bucket-springmvc3";
-
 	@Autowired
 	NcpObjectStorageService storageService;
 
@@ -39,7 +37,7 @@ public class ShopRepleController {
 		// 업로드할 파일명(랜덤문자열.확장자)
 //		String uploadFilename = UUID.randomUUID() + "." + upload.getOriginalFilename().split("\\.")[1];
 		// 사진업로드
-		String uploadFileName = storageService.uploadFile(bucketName, "shop", upload);
+		String uploadFileName = storageService.uploadFile(NcpObjectStorageService.getBucketname(), "shop", upload);
 //		try {
 //			upload.transferTo(new File(uploadFolder + "/" + uploadFilename));
 //		} catch (IllegalStateException | IOException e) {
@@ -68,7 +66,7 @@ public class ShopRepleController {
 		// 삭제할 사진명
 		String photo = repleService.getPhoto(idx);
 		// 사진 삭제
-		storageService.deleteFile(bucketName, "shop", photo);
+		storageService.deleteFile(NcpObjectStorageService.getBucketname(), "shop", photo);
 //		File file = new File(uploadFolder + "/" + photo);
 //		if (file.exists())
 //			file.delete();

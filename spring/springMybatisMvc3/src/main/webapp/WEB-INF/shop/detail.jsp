@@ -219,7 +219,7 @@ span.chu {
      </script>
 </head>
 <body>
-	<jsp:include page="../../layout/title.jsp" />
+	<jsp:include page="/layout/title.jsp" />
 	<!-- The Modal -->
 	<div class="modal" id="myMiniPhotoModal">
 		<div class="modal-dialog">

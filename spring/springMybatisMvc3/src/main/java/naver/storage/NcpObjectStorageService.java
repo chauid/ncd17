@@ -19,6 +19,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 
 @Service
 public class NcpObjectStorageService implements ObjectStorageService {
+	private static final String bucketName = "bitcamp-bucket-springmvc3";
 	private AmazonS3 s3;
 
 	public NcpObjectStorageService(NaverConfig naverConfig) {
@@ -73,4 +74,7 @@ public class NcpObjectStorageService implements ObjectStorageService {
 		}
 	}
 
+	public static String getBucketname() {
+		return bucketName;
+	}
 }
