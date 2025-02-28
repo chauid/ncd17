@@ -34,8 +34,8 @@ public class NcpObjectStorageService implements ObjectStorageService {
 
 	@Override
 	public String uploadFile(String bucketName, String directoryPath, MultipartFile file) {
-		System.out.println("uploadFile=" + file.getOriginalFilename());
-
+//		System.out.println("uploadFile=" + file.getOriginalFilename());
+		
 		if (file.isEmpty()) {
 			return null;
 		}
@@ -47,6 +47,7 @@ public class NcpObjectStorageService implements ObjectStorageService {
 
 			ObjectMetadata objectMetadata = new ObjectMetadata();
 			objectMetadata.setContentType(file.getContentType());
+			objectMetadata.setContentLength(file.getSize());
 
 			PutObjectRequest objectRequest = new PutObjectRequest(bucketName, directoryPath + "/" + filename, fileIn,
 					objectMetadata).withCannedAcl(CannedAccessControlList.PublicRead);

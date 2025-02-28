@@ -18,7 +18,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
-	<jsp:include page="../../layout/title.jsp" />
+	<jsp:include page="/layout/title.jsp" />
 	<div style="margin: 20px; width: 600px;">
 		<div style="height: 200px; border: 1px solid black;">
 			<textarea id="message"

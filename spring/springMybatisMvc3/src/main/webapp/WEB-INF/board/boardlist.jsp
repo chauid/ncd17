@@ -28,7 +28,7 @@
      </style>
 </head>
 <body>
-<jsp:include page="../../layout/title.jsp"/>
+<jsp:include page="/layout/title.jsp"/>
 
 <div style="margin: 20px; width: 700px;">
 	<h5 class="alert alert-danger">

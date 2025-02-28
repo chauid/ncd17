@@ -16,4 +16,5 @@ public interface BoardMapper {
 	public void updateReadcount(int idx);
 	public BoardDto getSelectByIdx(int idx);
 	public List<BoardDto> getSelectById(String myid);
+	public void updateBoard(BoardDto dto);
 }

@@ -22,4 +22,12 @@ public class BoardFileService {
 	{
 		return fileMapper.getFiles(idx);
 	}
+	
+	public String getFilename(int num) {
+		return fileMapper.getFilename(num);
+	}
+	
+	public void deleteFile(int num) {
+		fileMapper.deleteFile(num);
+	}
 }

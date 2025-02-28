@@ -23,7 +23,7 @@ public class BoardListController {
 	@GetMapping("/board/list")
 	public String list(@RequestParam(value = "pageNum", defaultValue = "1") int pageNum, Model model) {
 		// 페이징 처리
-		int perPage = 3;// 한페이지당 출력할 글의 갯수
+		int perPage = 5;// 한페이지당 출력할 글의 갯수
 		int perBlock = 3; // 한 블럭당 출력할 페이지 갯수
 		int totalCount;// 전체 게시글 갯수
 		int totalPage; // 총 페이지수
@@ -53,7 +53,7 @@ public class BoardListController {
 		// 마지막 페이지의 1개남은 글을 지우고 다시 해당페이지를
 		// 왔을경우 데이타가 안나오는 현상
 		if (list.size() == 0) {
-			if(pageNum < 1) {
+			if (pageNum < 2) {
 				return "board/boardlist";
 			}
 			return "redirect:./list?pageNum=" + (pageNum - 1);

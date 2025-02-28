@@ -11,4 +11,5 @@ public interface BoardFileMapper {
 	public void insertBoardFile(BoardFileDto dto);
 	public List<BoardFileDto> getFiles(int idx);
 	public void deleteFile(int num);
+	public String getFilename(int num);
 }

@@ -30,7 +30,7 @@
 	</script>
 </c:if>
 
-<jsp:include page="../../layout/title.jsp"/>
+<jsp:include page="/layout/title.jsp"/>
 
 <div style="margin: 30px;width:500px;">
 	<form action="./insert" method="post" enctype="multipart/form-data">

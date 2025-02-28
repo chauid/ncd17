@@ -19,7 +19,7 @@
 		</selectKey>
 	</insert>
 	<select id="getPagingList" parameterType="Map" resultType="BoardDto">
-		select * from board
+		select * from board order by regroup desc,restep asc limit #{start},#{perpage}
 	</select>
 	<update id="updateReadcount" parameterType="int">
 		update board set readcount=readcount+1 where idx=#{idx}
@@ -30,6 +30,12 @@
 	<select id="getSelectById" parameterType="String" resultType="BoardDto">
 		select * from board where myid=#{myid}
 	</select>
+	<update id="updateBoard" parameterType="BoardDto">
+		update board set subject=#{subject},content=#{content} where idx=#{idx}
+	</update>
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where idx=#{idx}
+	</delete>
 </mapper>
 
 

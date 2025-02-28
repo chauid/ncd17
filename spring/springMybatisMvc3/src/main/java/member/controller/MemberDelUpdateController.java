@@ -1,8 +1,6 @@
 package member.controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.UUID;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,19 +13,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import data.dto.BoardDto;
 import data.dto.MemberDto;
+import data.service.BoardFileService;
+import data.service.BoardService;
 import data.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import naver.storage.NcpObjectStorageService;
 
 @Controller
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/member")
 public class MemberDelUpdateController {
-
-	MemberService memberService;
+	final MemberService memberService;
+	final BoardService boardService;
+	final BoardFileService boardFileService;
 
 	// 버킷 이름
 	private static final String bucketName = "bitcamp-bucket-springmvc3";
@@ -73,8 +75,12 @@ public class MemberDelUpdateController {
 			dto.setMphoto("https://kr.object.ncloudstorage.com/bitcamp-bucket-springmvc3/member/" + dto.getMphoto());
 			
 		}
+		List<BoardDto> list = boardService.getSelectById(myid);
+		
 		// 모델에 dto저장
 		model.addAttribute("dto", dto);
+		model.addAttribute("list", list);
+		
 		return "member/mypage";
 	}
 
