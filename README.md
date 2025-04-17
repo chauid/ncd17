@@ -55,6 +55,7 @@
 |2025.03.12|gradle project, docker|
 |2025.03.13|thymeleaf|
 |2025.03.14|thymeleaf layout|
+|2025.04.17|JPA|
 
 ### 9&#126;11주차()
 #### **React**  
