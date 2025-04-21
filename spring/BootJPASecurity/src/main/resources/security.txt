@@ -1,0 +1,31 @@
+스프링 시큐리티 : 스프링 기반의 애플리케이션 보안(인증,인가,권한)을 담당하는 스프링 하위 프레임워크
+
+인증(authentication:증명,입증,인증)
+           사용자의 신원을 인증하는 과정-로그인시 확인하는 과정
+
+인가(authorization:허가,인가)
+    사이트의 특정 경로에 접근할수 있는 권한유무
+특정한 경로에 요청이 오면 Controller 클래스에 도달하기 전 필터에서 Spring Security가 검증을 함 
+
+1.해당 경로의 접근은 누구에게 열려 있는지
+2.로그인이 완료된 사용자인지
+3.해당되는 role을 가지고 있는지
+
+Security Configuration
+인가 설정을 진행하는 클래스 
+
+(엄밀하게 정의하면 SecurityFilterChain 설정을 진행함)
+
+코드 넣기전 로그인은 user/콘솔창 암호
+--------------------------------------------------------------
+1. 사용자가 폼에 아이디, 패스워드를 입력하면 HTTPServletRequest에 아이디, 비밀번호 정보가 전달된다. 
+    AuthenticationFilter에서 넘어온 아이디와 비밀번호의 유효성 검사를 실시한다.
+2. 유효성 검사 후에 실제 구현체인 UsernamePasswordAuthenticationToekn을 만들어서 넘겨준다.
+3. 인증용 객체인 UsernamePasswordAuthenticationToekn을 AuthenticationManager에 전달한다.
+4. UsernamePasswordAuthenticationToekn을 AuthenticationProvider에게 전달한다.
+5. 사용자 아이디를 UserDetailService로 보내고, UserDetailService는 
+   사용자 아이디로 찾은 사용자의 정보로 UserDetail 객체로 만들어 AuthenticationProvider에게 전달한다.
+6. DB에 있는 사용자 정보를 가져오며
+7. 입력정보와 UserDetail 정보를 비교해 실제 인증처리를 진행한다.
+8~10.까지 인증이 완료되면 SecurityContextHolder 세션에 Authentication을 저장한다.  
+    인증 성공여부에 따라 성공하면 AuthenticationSuccessHandler, 실패하면 AuthenticationFailureHandler 핸들
