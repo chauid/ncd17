@@ -2,7 +2,10 @@ package bit.day0417.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import bit.day0417.data.MycarDto;
@@ -30,10 +33,16 @@ public class MycarDao {
 	
 	public List<MycarDto> getAllCarList()
 	{
-		//return mycarRepository.findAll();//추가한 순서대로
+		return mycarRepository.findAll();//추가한 순서대로
 		//return mycarRepository.findAll(Sort.by(Sort.Direction.DESC,"carprice"));//단가의 내림차순으로 정렬해서 출력
 		//return mycarRepository.findAll(Sort.by(Sort.Direction.ASC,"carprice"));//단가의 오름차순으로 정렬해서 출력
-		return mycarRepository.findAll(Sort.by(Sort.Direction.ASC,"carguip"));//구입일의 오름차순으로 정렬해서 출력
+		//return mycarRepository.findAll(Sort.by(Sort.Direction.ASC,"carguip"));//구입일의 오름차순으로 정렬해서 출력
+	}
+	
+	//페이지에 필요한 만큼만 가져가는 메서드
+	public Page<MycarDto> getAllPageCars(Pageable pageable)
+	{
+		return mycarRepository.findAll(pageable);//페이지에 필요한 만큼만 데이타 반환
 	}
 	
 	public MycarDto getData(Long num)
@@ -49,6 +58,17 @@ public class MycarDao {
 	public void deleteCar(Long num)
 	{
 		mycarRepository.deleteById(num);
+	}
+	
+	//search
+	public List<MycarDto> getSearchList(String search)
+	{
+		return mycarRepository.getSearchList(search);
+	}
+
+	public List<MycarDto> findByCarnameContaining(String search)
+	{
+		return mycarRepository.findByCarnameContaining(search);
 	}
 }
 

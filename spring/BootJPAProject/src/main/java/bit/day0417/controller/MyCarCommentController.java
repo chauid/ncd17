@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +27,7 @@ public class MyCarCommentController {
 	{
 		//먼저 MyCarDto 에 num 값을 넣은후 MyCarCommentDto 에 넣는다(외부키로 지정된값)
 		MycarDto mycar=MycarDto.builder().num(num).build();
-
+		
 		MycarCommentDto commentDto=MycarCommentDto.builder()
 				.nickname(nickname)
 				.comment(comment)
@@ -37,19 +38,20 @@ public class MyCarCommentController {
 		commentService.insertComment(commentDto);
 	}
 
-	//	@PostMapping("/addcomment")
-	//	public String addComment(@RequestBody MycarCommentDto dto)
-	//	{
-	//		MycarDto mycar=MycarDto.builder().num(dto.getNum()).build();
-	//
-	//		MycarCommentDto commentDto=MycarCommentDto.builder()				
-	//				.mycar(mycar)
-	//				.build();
-	//
-	//		//db insert
-	//		commentService.insertComment(commentDto);
-	//		return "comment insert ok";
-	//	}
+//	@PostMapping("/addcomment")
+//	public String addComment(@RequestBody MycarCommentDto dto)
+//	{
+//		System.out.println(dto);
+//		MycarDto mycar=MycarDto.builder().num(dto.getNum()).build();
+//
+//		MycarCommentDto commentDto=MycarCommentDto.builder()				
+//				.mycar(mycar)
+//				.build();
+//
+//		//db insert
+//		commentService.insertComment(commentDto);
+//		return "comment insert ok";
+//	}
 
 	@Operation(summary = "commentlist",description = "댓글 목록 출력")
 	@GetMapping("/commentlist")

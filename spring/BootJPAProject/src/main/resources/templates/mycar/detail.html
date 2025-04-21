@@ -19,20 +19,122 @@
        		border: 1px solid black;
        		display: inline-block;
        }
+       
+       .day{
+       		color:#ccc;
+       		font-size: 0.9em;
+       		margin-left: 20px;
+       }
+       
+       .commentdel{
+       		color:red;
+       		cursor: pointer;
+       		margin-left: 10px;
+    		font-size: 16px;
+       }
 </style>
+<script type="text/javascript">
+	$(function(){
+		comment_list();//처음 로딩시 댓글 출력
+		
+		$(document).on("click",".commentdel",function(){
+			let idx=$(this).attr("idx");
+			
+			let a=confirm("해당 댓글을 삭제할까요?");
+			if(!a)
+				return;
+			
+			$.ajax({
+				type:"delete",
+				dataType:"text",
+				url:"./commentdel",
+				data:{"idx":idx},
+				success:function(){
+					comment_list();
+				}
+			});
+		});
+	});
+	
+	function comment_list()
+	{
+		let num=[[${dto.num}]];
+		
+		$.ajax({
+			type:"get",
+			dataType:"json",
+			url:"./commentlist",
+			data:{"num":num},
+			success:function(res){
+				//alert(res.length);
+				$(".commentcnt").text(res.length);
+				let s="";
+				$.each(res,function(i,ele){
+					s+=
+					`
+						<div style="margin-left:20px;">
+							[${ele.nickname}]&nbsp;
+							${ele.comment}
+							<span class="day">${ele.writeday}</span>
+							<i class="bi bi-x commentdel" idx="${ele.idx}"></i>
+						</div>
+					`;
+				});
+				$(".commentlist").next().html(s);
+			}
+		});
+	}
+</script>
 </head>
 <body>
 <div style="margin: 20px;width:600px;">	
 	<h6 class="alert alert-info">상세보기</h6>
 	<img th:src="|./${dto.carimage}|" style="width:300px;border: 3px solid gray;" align="left" hspace="20">	
 	
-	<br><br>
+	<br><br><br>
 	<h6>자동차명 : [[${dto.carname}]]</h6>
 	<h6>색상 : <div class="box" th:style="'background-color:'+${dto.carcolor}"></div></h6>
 	<h6>단가 : <span th:text="${#numbers.formatInteger(dto.carprice,0,'COMMA')}"></span>만원</h6>
 	<h6>구입일 : [[${dto.carguip}]]</h6>
 	<h6>등록일 : <span th:text="${#calendars.format(dto.writeday,'yyyy-MM-dd HH:mm')}"></span></h6>
+	<br>
 </div>
+<hr>
+<h6 class="commentlist">댓글 목록(총 <span class="commentcnt"></span>개)</h6>
+<div>
+
+</div>
+<br>
+<div class="input-group" style="width: 600px;">
+	<input type="text" id="nickname" class="form-control" placeholder="닉네임" style="width: 100px;">
+	<input type="text" id="comment" class="form-control" placeholder="댓글입력" style="width: 400px;">
+	<button type="button" class="btn btn-sm btn-danger" id="btnaddcomment">추가</button>
+</div>
+<script type="text/javascript">
+	$("#btnaddcomment").click(function(){
+		let num=[[${dto.num}]];
+		//alert(num);
+		let nickname=$("#nickname").val();
+		let comment=$("#comment").val();
+		if(nickname=='' || comment==''){
+			alert("닉네임과 댓글을 입력해주세요");
+			return;
+		}
+		$.ajax({
+			type:"post",
+			dataType:"text",
+			url:"./addcomment",
+			data:{"num":num,"nickname":nickname,"comment":comment},
+			success:function(){
+				comment_list();
+				$("#nickname").val("");
+				$("#comment").val("");
+			}
+		});
+		
+	});
+</script>
+<hr>
 <div style="margin: 20px;width:600px;">	
 	<button type="button" class="btn btn-sm btn-info"
 	onclick="location.href='./addform'">자동차 등록</button>

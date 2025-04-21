@@ -1,7 +1,10 @@
 package bit.day0417.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import bit.day0417.data.MycarDto;
 /*
@@ -22,4 +25,11 @@ public interface MycarRepository extends JpaRepository<MycarDto,Long>{
 	
 	@Query(value = "select count(*) from jpamycar",nativeQuery = true)
 	public Long getTotalMycount();
+	
+	@Query(value = "select * from jpamycar where carname like concat('%',:search,'%')",nativeQuery = true)
+	public List<MycarDto> getSearchList(@Param("search") String search);
+	
+	
+	public List<MycarDto> findByCarnameContaining(String search);
+	
 }

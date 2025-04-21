@@ -3,7 +3,6 @@ package bit.day0417.data;
 import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,7 +28,7 @@ import lombok.NoArgsConstructor;
 public class MycarDto {	
 	@Id  //각 엔터티를 구별할수 있도록 식별 아이디를 갖도록 설계
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long num;
+	private Long num;	
 	
 	//@Column(name = "dbcarname")  //변수명과 달리 db 에는 dbcarname 으로 생성된다
 	@Column(length = 30) //name 은 생략시 변수명과 같은 이름으로 컬럼명이 생성된다

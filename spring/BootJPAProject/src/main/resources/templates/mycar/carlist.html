@@ -20,9 +20,11 @@
 </head>
 <body>
 	<h4 class="alert alert-danger">
-		<b>총 [[${totalCount}]] 개의 자동차가 등록되었습니다</b>
+		<b>총 [[${totalCount}]] 개의 자동차가 등록되었습니다(총 페이지수:[[${totalPage}]])</b>
 		
 		<button onclick="location.href='./addform'" class="btn btn-sm btn-success">자동차 등록</button>
+		
+		<button onclick="location.href='./searchpage'" class="btn btn-sm btn-warning">검색페이지로 이동</button>
 	</h4>
 	<table class="table table-bordered tab" style="width: 600px;">
 		<caption align="top"><b>등록 자동차 목록</b></caption>
@@ -35,7 +37,12 @@
 		</tr>
 		<tr th:each="dto,iter:${list}">
 			<td align="center">[[${iter.count}]]</td>
-			<td>[[${dto.carname}]]</td>
+			<td>[[${dto.carname}]]
+				<!-- 댓글 갯수가 0개 이상인경우 출력 -->
+				<span style="margin-left: 5px;color:red;" th:if="${dto.commentcount>0}">
+				  ([[${dto.commentcount}]])
+				</span>
+			</td>
 			<td align="right">
 				<span th:text="${#numbers.formatInteger(dto.carprice,0,'COMMA')}"></span>만원
 			</td>
@@ -46,8 +53,30 @@
 			</td>
 		</tr>
 	</table>
+	<div style="width:600px;text-align: center" th:if="${pageSize<totalCount}">
+		 <button type="button" th:onclick="|location.href='@{./carlist(more=2)}'|">More</button>
+	</div>
+	<div style="width:600px;text-align: center" th:if="${pageSize>=totalCount}">
+		 <button type="button" th:onclick="|location.href='@{./carlist}'|">접기</button>
+	</div>
 </body>
 </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
