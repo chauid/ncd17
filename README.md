@@ -64,10 +64,10 @@
 > [프로젝트 폴더](./react/)  
 > IDE: vscode
 
-|날짜|내용|
-|---|---|
-|2025.04.21|node 런타임 실행, React class, state hook|
-
+|날짜|프로젝트 폴더|내용|
+|---|:---:|---|
+|2025.04.21|[es6](./react/es6/), [day0421](./react/react-day0421/)|node 런타임 실행, React class, state hook|
+|2025.04.22|[day0422](./react/react-day0422/)|mui, map, (useState, useEffect)Hooks|
 ### 12주차
 
 ### 13&#126;22주차
