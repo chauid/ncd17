@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MainApp from './components/MainApp';
 import Root from './router/Root';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  //   {/* <App /> */}
-  //   <MainApp/>
+  //   <Root/>
   // </React.StrictMode>
   <>
     <Root/>

@@ -20,7 +20,7 @@ const FourApp = () => {
 
     //추가하는 함수
     //const addurl="http://localhost:8090/react/addshop";
-    const addurl = process.env.REACT_APP_API_URL + "/react/addshop";//package.json 에서 proxy 설정을 한경우
+    const addurl=process.env.REACT_APP_API_URL + "/react/addshop";//package.json 에서 proxy 설정을 한경우
 
     const addShopEvent=(shopdata)=>{
         console.log(shopdata);
@@ -37,6 +37,14 @@ const FourApp = () => {
         axios.get(process.env.REACT_APP_API_URL + "/react/shoplist")
         .then(res=>setShopList(res.data));
     }
+
+    //삭제 함수
+    const onDelete=(num)=>{
+        let deleteurl=process.env.REACT_APP_API_URL + "/react/shopdelete?num="+num;
+        axios.delete(deleteurl)
+        .then(res=>list());//삭제 성공후 목록 다시 출력
+    }
+
 
     //처음 시작시 딱 한번만 list 호출하기
     useEffect(()=>{
@@ -58,7 +66,7 @@ const FourApp = () => {
                     shoplist
                     &&
                     shoplist.map((row,idx)=>
-                        <FourRowItem key={idx} row={row}/>)
+                        <FourRowItem key={idx} row={row} onDelete={onDelete}/>)
                 }
                 </tbody>
             </table>

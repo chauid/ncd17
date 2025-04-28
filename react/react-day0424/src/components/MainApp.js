@@ -10,7 +10,7 @@ import SevenApp from './SevenApp';
 import EightApp from './EightApp';
 
 const MainApp = () => {
-    const [idx,setIdx]=useState(4);
+    const [idx,setIdx]=useState(5);
 
     return (
         <div>
