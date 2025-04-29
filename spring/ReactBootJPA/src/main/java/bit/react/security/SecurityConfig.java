@@ -29,13 +29,13 @@ public class SecurityConfig {
 	
 	//비밀번호 암호화에 필요한 메서드
 	@Bean
-	BCryptPasswordEncoder bCryptPasswordEncoder()
+	public BCryptPasswordEncoder bCryptPasswordEncoder()
 	{
 		return new BCryptPasswordEncoder();
 	}
 	
 	@Bean
-	SecurityFilterChain filterChain(HttpSecurity http) throws Exception
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
 	{
 		//csrf disable-세션 저장 방식이 아니라서 disable 해도된다
 		http
@@ -54,9 +54,9 @@ public class SecurityConfig {
 		//경로별 인가작업
 		http
 		.authorizeHttpRequests(auth->auth
-				.requestMatchers("/","/login","/join","/common/**").permitAll()
+				.requestMatchers("/","/login","/member/**","/react/**").permitAll()
 				.requestMatchers(AUTH_WHITELIST).permitAll()
-				.requestMatchers("/admin").hasRole("ADMIN")
+				.requestMatchers("/admin","/auth/member/list").hasRole("ADMIN")
 				.anyRequest().authenticated()//로그인한 사용자만 접근
 				);
 		

@@ -68,4 +68,5 @@
 |2025.04.21|[es6](./react/es6/), [day0421](./react/react-day0421/)|node 런타임 실행, React class, state hook|
 |2025.04.22|[day0422](./react/react-day0422/)|mui, map, (useState, useEffect)Hooks|
 |2025.04.23|[day0423](./react/react-day0423/)|eventListener, map.filter, useRef, function props|
-|2025.04.24&#126; 2025.04.28|[day0424](./react/react-day0424/), [ReactBootJPA](./spring/ReactBootJPA/)|파일 업로드, JPA, mui-formControl, React Hook, react-router-dom|
+|2025.04.24&#126; 2025.04.28|[day0424](./react/react-day0424/), [ReactBootJPA](./spring/ReactBootJPA/)|파일 업로드, JPA, mui-formControl, React Hook, react-router-dom, Spring Security|
+|2025.04.29|[react-member](./react/react-member/), [ReactBootJPA](./spring/ReactBootJPA/)|React + Spring Security|
