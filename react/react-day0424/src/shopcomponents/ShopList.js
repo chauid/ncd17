@@ -12,7 +12,7 @@ const ShopList = () => {
 
     //출력함수
     const list=()=>{
-        axios.get(process.env.REACT_APP_API_URL + "/react/shoplist")
+        axios.get("/react/shoplist")
         .then(res=>setShopList(res.data));
     }
     //처음 로딩시 list 함수 호출

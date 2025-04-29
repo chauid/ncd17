@@ -19,7 +19,7 @@ const RouterMain = () => {
                     <Route path='/five/*' element={<FiveApp/>}/>
                     <Route path='/six' element={<SixApp/>}/>
                     <Route path='/seven' element={<SevenApp/>}/>
-                    <Route path='/eight' element={<EightApp/>}/>                    
+                    <Route path='/eight/*' element={<EightApp/>}/>                    
                 </Routes>
             </div>
         </div>

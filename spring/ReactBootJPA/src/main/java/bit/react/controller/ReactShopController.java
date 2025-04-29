@@ -31,13 +31,15 @@ public class ReactShopController {
 	private String uploadFilename;
 	
 	//네이버 클라우드 버켓네임
-	private String bucketName="bitcamp-bucket-springmvc3";
+	private String bucketName="bitcamp-bucket-56";
 	//스토리지의 폴더명
 	private String folderName="jpashop";
 	
 	@PostMapping("/addshop")
 	public String addShop(@RequestBody ShopDto dto)//json 데이타를 자바 객체로 변환
 	{
+		System.out.println("addshop:"+dto);
+		
 		ShopEntity shopEntity=ShopEntity.builder()
 				.sangpum(dto.getSangpum())
 				.price(dto.getPrice())
@@ -52,10 +54,15 @@ public class ReactShopController {
 		return "insert ok!";
 	}
 	
+	
 	//사진은 따로 업로드
-	@PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	@PostMapping(value = "/upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	//@PostMapping(value = "/upload") //form-data 설정을 리액트에서 한경우에는 생략가능(위의 코드)
 	public String uploadPhoto(@RequestParam("upload") MultipartFile upload)
 	{
+		System.out.println("업로드한 파일명:"+upload.getOriginalFilename());
+		if(uploadFilename!=null)
+			storageService.deleteFile(bucketName, folderName, uploadFilename);//이전에 업로드한 사진 지우기
 		//네이버 클라우드에 업로드하기
 		uploadFilename=storageService.uploadFile(bucketName, folderName, upload);
 		return uploadFilename;
@@ -83,6 +90,23 @@ public class ReactShopController {
 		shopDao.deleteShop(num);
 		
 		return "delete ok!!";
+	}
+	
+	@PostMapping("/shopupdate")
+	public String updateShop(@RequestBody ShopDto dto)
+	{
+		ShopEntity entity=ShopEntity.builder()
+				.sangpum(dto.getSangpum())
+				.color(dto.getColor())
+				.price(dto.getPrice())
+				.sangguip(dto.getSangguip())
+				.num(dto.getNum())
+				.photo(uploadFilename)
+				.build();
+		
+		shopDao.updateShop(entity);
+		uploadFilename=null;
+		return "update ok!!";
 	}
 
 }
