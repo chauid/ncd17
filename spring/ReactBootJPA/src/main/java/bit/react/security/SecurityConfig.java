@@ -54,9 +54,10 @@ public class SecurityConfig {
 		//경로별 인가작업
 		http
 		.authorizeHttpRequests(auth->auth
-				.requestMatchers("/","/login","/member/**","/react/**").permitAll()
+				.requestMatchers("/","/login","/member/**","/react/**","/board/list").permitAll()
 				.requestMatchers(AUTH_WHITELIST).permitAll()
 				.requestMatchers("/admin","/auth/member/list").hasRole("ADMIN")
+				.requestMatchers("/auth/board/*").hasAnyRole("ADMIN","MEMBER")
 				.anyRequest().authenticated()//로그인한 사용자만 접근
 				);
 		

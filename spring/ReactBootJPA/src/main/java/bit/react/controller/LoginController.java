@@ -26,6 +26,7 @@ public class LoginController {
 		String token = this.authService.login(username,password);
 		Map<String, String> map=new HashMap<>();
 		map.put("token", token);
+		map.put("username", username);
 		map.put("Authorization","Bearer "+token);
 		return map;
 	}
