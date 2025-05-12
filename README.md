@@ -1,7 +1,6 @@
 ## 네이버 클라우드 데브옵스 17기
 
-### 1&#126;8주차(2024.12.10&#126;2025.01.31)
-#### **Java (JDK17), SQL, Web**  
+### **Java (JDK17), SQL, Web**  
 > IDE: Eclipse, Visual Studio Code  
 > DB: Oracle DB, MySQL  
 > [Java 프로젝트 폴더](./java/workspace/classProject/)  
@@ -34,7 +33,7 @@
 |2025.02.10&#126; 2025.02.13|[JSTL](./java/workspace/ServletProject/)|Servlet JSTL|
 
 
-#### **Spring**  
+### **Spring**  
 > [프로젝트 폴더](./spring/)  
 > IDE: Eclipse, Spring Suite Tool
 
@@ -58,8 +57,9 @@
 |2025.04.17|JPA|
 |2025.04.18|JPA|
 |2025.04.21|Spring Security|
+|2025.05.09|Spring MSA 구성: Eureka Server, Config Server|
 
-#### **React**  
+### **React**  
 > [프로젝트 폴더](./react/)  
 > IDE: vscode
 
@@ -70,3 +70,4 @@
 |2025.04.23|[day0423](./react/react-day0423/)|eventListener, map.filter, useRef, function props|
 |2025.04.24&#126; 2025.04.28|[day0424](./react/react-day0424/), [ReactBootJPA](./spring/ReactBootJPA/)|파일 업로드, JPA, mui-formControl, React Hook, react-router-dom, Spring Security|
 |2025.04.29&#126; 2025.04.30|[react-member](./react/react-member/), [ReactBootJPA](./spring/ReactBootJPA/)|React + Spring Security|
+|2025.05.07&#126; 2025.05.08|[Spring+React](./spring/final502/)|Spring + React, Gradle Task|
